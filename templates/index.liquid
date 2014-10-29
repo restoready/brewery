@@ -1,15 +1,19 @@
-<div class="restaurant-main-image">
-  {% if restaurant.summary? %}
-    <div class="restaurant-main-image__overlay">
-      <div class="wrapper">
-        <div class="restaurant-summary">
-          {{ restaurant.summary }}
-        </div>
-      </div>
-    </div>
-  {% endif %}
+<div class="home-header">
+  <div class="image-header image-header--top-left">
+  </div>
+  <div class="image-header image-header--top-right">
+  </div>
+  <div class="image-header image-header--middle-left">
+  </div>
+  <div class="image-header image-header--middle-middle">
+  </div>
+  <div class="image-header image-header--middle-right">
+  </div>
+  <div class="image-header image-header--bottom-left">
+  </div>
+  <div class="image-header image-header--bottom-right">
+  </div>
 </div>
-
 {% if home_menus.size > 0 %}
   <section class="menus menus--featured">
     <div class="wrapper">
@@ -63,7 +67,7 @@
   </section>
 {% endif %}
 
-<div class="wrapper">
+<!-- <div class="wrapper">
   <section class="opening-hours">
     <header class="section__header">
       <h2 class="section__title">{{ "Horaires" | t }}</h2>
@@ -124,4 +128,4 @@
       </p>
     </footer>
   </section>
-</div>
+</div> -->

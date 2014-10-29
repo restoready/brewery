@@ -3,7 +3,7 @@
     "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>",
     "header-font": "'Open Sans', sans-serif",
     "body-font": "'Open Sans', sans-serif",
-    "body-background": "#ffffff",
+    "body-background": "#eeeeee",
     "body-color": "#465155",
     "accent-color": "#cccccc",
     "nav-background-color": "#eeeeee",
@@ -13,14 +13,21 @@
     "google_business_view_embed": "",
     "display_google_business_view_embed": false,
     "google_map_type": "image",
-    "footer_display_newsletter": true
+    "footer_display_newsletter": true,
+    "image-header-top-left": true,
+    "image-header-top-right": true,
+    "image-header-middle-left": true,
+    "image-header-middle-middle": true,
+    "image-header-middle-right": true,
+    "image-header-bottom-left": true,
+    "image-header-bottom-right": true
   },
   "presets":{
     "Original":{
       "google-fonts-link": "<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>",
       "header-font": "'Open Sans', sans-serif",
       "body-font": "'Open Sans', sans-serif",
-      "body-background": "#ffffff",
+      "body-background": "#eeeeee",
       "body-color": "#465155",
       "accent-color": "#cccccc",
       "nav-background-color": "#eeeeee",
@@ -30,7 +37,14 @@
       "google_business_view_embed": "",
       "display_google_business_view_embed": false,
       "google_map_type": "image",
-      "footer_display_newsletter": true
+      "footer_display_newsletter": true,
+      "image-header-top-left": true,
+      "image-header-top-right": true,
+      "image-header-middle-left": true,
+      "image-header-middle-middle": true,
+      "image-header-middle-right": true,
+      "image-header-bottom-left": true,
+      "image-header-bottom-right": true
     }
   }
 }

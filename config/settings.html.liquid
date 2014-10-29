@@ -11,6 +11,10 @@
   <label for="tab3">
     Modules
   </label>
+  <input class="tab-head" id="tab4" name="tab" type="radio">
+  <label for="tab4">
+    Images
+  </label>
 
   <div class="tab-body-wrapper">
     <div class="tab-body" id="tab-body-1">
@@ -131,6 +135,195 @@
             </div>
           </div>
         </div>
+      </fieldset>
+    </div>
+
+    <div class="tab-body" id="tab-body-4">
+      <fieldset>
+        <legend>Accueil</legend>
+        <div class="small-12 medium-6 large-4 columns">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-header-top-left">Image header top-left (jpg)</label>
+          </div>
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.image-header-top-left %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-top-left]" id="image-header-top-left" type="checkbox" value="{{ theme_settings.image-header-top-left }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-top-left]" id="image-header-top-left" type="checkbox" value="{{ theme_settings.image-header-top-left }}" data-skin='black-green' />
+            {% endif %}
+            <label for="image-header-top-left">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-header-top-left" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][image-header-top-left.jpg]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'image-header-top-left.jpg' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-header-top-right">Image header top-right (jpg)</label>
+          </div>
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.image-header-top-right %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-top-right]" id="image-header-top-right" type="checkbox" value="{{ theme_settings.image-header-top-right }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-top-right]" id="image-header-top-right" type="checkbox" value="{{ theme_settings.image-header-top-right }}" data-skin='black-green' />
+            {% endif %}
+            <label for="image-header-top-right">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-header-top-right" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][image-header-top-right.jpg]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'image-header-top-right.jpg' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-header-middle-left">Image header middle-left (jpg)</label>
+          </div>
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.image-header-middle-left %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-middle-left]" id="image-header-middle-left" type="checkbox" value="{{ theme_settings.image-header-middle-left }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-middle-left]" id="image-header-middle-left" type="checkbox" value="{{ theme_settings.image-header-middle-left }}" data-skin='black-green' />
+            {% endif %}
+            <label for="image-header-middle-left">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-header-middle-left" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][image-header-middle-left.jpg]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'image-header-middle-left.jpg' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-header-middle-middle">Image header middle-middle (jpg)</label>
+          </div>
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.image-header-middle-middle %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-middle-middle]" id="image-header-middle-middle" type="checkbox" value="{{ theme_settings.image-header-middle-middle }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-middle-middle]" id="image-header-middle-middle" type="checkbox" value="{{ theme_settings.image-header-middle-middle }}" data-skin='black-green' />
+            {% endif %}
+            <label for="image-header-middle-middle">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-header-middle-middle" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][image-header-middle-middle.jpg]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'image-header-middle-middle.jpg' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-header-middle-right">Image header middle-right (jpg)</label>
+          </div>
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.image-header-middle-right %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-middle-right]" id="image-header-middle-right" type="checkbox" value="{{ theme_settings.image-header-middle-right }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-middle-right]" id="image-header-middle-right" type="checkbox" value="{{ theme_settings.image-header-middle-right }}" data-skin='black-green' />
+            {% endif %}
+            <label for="image-header-middle-right">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-header-middle-right" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][image-header-middle-right.jpg]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'image-header-middle-right.jpg' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-header-bottom-left">Image header bottom-left (jpg)</label>
+          </div>
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.image-header-bottom-left %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-bottom-left]" id="image-header-bottom-left" type="checkbox" value="{{ theme_settings.image-header-bottom-left }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-bottom-left]" id="image-header-bottom-left" type="checkbox" value="{{ theme_settings.image-header-bottom-left }}" data-skin='black-green' />
+            {% endif %}
+            <label for="image-header-bottom-left">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-header-bottom-left" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][image-header-bottom-left.jpg]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'image-header-bottom-left.jpg' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          <div class="small-12 medium-12 large-11">
+            <label for="image-header-bottom-right">Image header bottom-right (jpg)</label>
+          </div>
+          <div class="small-12 medium-12 large-11">
+            {% if theme_settings.image-header-bottom-right %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-bottom-right]" id="image-header-bottom-right" type="checkbox" value="{{ theme_settings.image-header-bottom-right }}" data-skin='black-green' checked/>
+            {% else %}
+            <input class="icheck-me" name="admin_theme_settings[image-header-bottom-right]" id="image-header-bottom-right" type="checkbox" value="{{ theme_settings.image-header-bottom-right }}" data-skin='black-green' />
+            {% endif %}
+            <label for="image-header-bottom-left">Afficher l'image</label>
+          </div>
+
+          <div class="small-12 medium-12 large-11">
+            <div id="plupload-image-header-bottom-right" class="input-file input-file-asset">
+              <input name="admin_theme_settings[assets][image-header-bottom-right.jpg]" type="file"/>
+            </div>
+          </div>
+
+          <div class="small-12 medium-12 large-11 preview">
+            <div class="filelist">
+              {{ 'image-header-bottom-right.jpg' | asset_url | image_tag }}
+            </div>
+          </div>
+        </div>
+
+
       </fieldset>
     </div>
   </div>

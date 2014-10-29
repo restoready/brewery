@@ -824,26 +824,73 @@ legend {
 }
 
 // Home page
-.restaurant-main-image {
-  {% if restaurant.main_image? %}
-    background-image: url({{ restaurant.main_image | custom_image_url: '1920x480#' }});
-  {% endif %}
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: $accent-color;
+.image-header {
+  position: relative;
+  box-sizing: border-box;
+  border: 3px solid #EEEEEE;
 }
-  .restaurant-main-image__overlay {
-    background-color: rgba(0,0,0, .5);
-  }
-.restaurant-summary {
-  color: #fff;
-  padding-top: 4em;
-  padding-bottom: 3em;
-  text-align: center;
-  p {
-    font-size: 1.2em;
-  }
+.image-header--top-left {
+  height: 200px;
+  background-color: #eeeeee;
+  {% if theme_settings.image-header-top-left %}
+    background: url({{ 'image-header-top-left.jpg' | asset_url }});
+    background-size: cover;
+    background-position: center center;
+  {% endif %}
+}
+.image-header--top-right {
+  height: 200px;
+  background-color: #eeeeee;
+  {% if theme_settings.image-header-top-right %}
+    background: url({{ 'image-header-top-right.jpg' | asset_url }});
+    background-size: cover;
+    background-position: center center;
+  {% endif %}
+}
+.image-header--middle-left {
+  height: 200px;
+  background-color: #eeeeee;
+  {% if theme_settings.image-header-middle-left %}
+    background: url({{ 'image-header-middle-left.jpg' | asset_url }});
+    background-size: cover;
+    background-position: center center;
+  {% endif %}
+}
+.image-header--middle-middle {
+  height: 200px;
+  background-color: #eeeeee;
+  {% if theme_settings.image-header-middle-middle %}
+    background: url({{ 'image-header-middle-middle.jpg' | asset_url }});
+    background-size: cover;
+    background-position: center center;
+  {% endif %}
+}
+.image-header--middle-right {
+  height: 200px;
+  background-color: #eeeeee;
+  {% if theme_settings.image-header-middle-right %}
+    background: url({{ 'image-header-middle-right.jpg' | asset_url }});
+    background-size: cover;
+    background-position: center center;
+  {% endif %}
+}
+.image-header--bottom-left {
+  height: 200px;
+  background-color: #eeeeee;
+  {% if theme_settings.image-header-bottom-left %}
+    background: url({{ 'image-header-bottom-left.jpg' | asset_url }});
+    background-size: cover;
+    background-position: center center;
+  {% endif %}
+}
+.image-header--bottom-right {
+  height: 200px;
+  background-color: #eeeeee;
+  {% if theme_settings.image-header-bottom-right %}
+    background: url({{ 'image-header-bottom-right.jpg' | asset_url }});
+    background-size: cover;
+    background-position: center center;
+  {% endif %}
 }
 .menus--featured {
   background-color: #fff;
@@ -1303,11 +1350,6 @@ x:-o-prefocus, .lb-overlay img {
     font-size: 112.5%;
   }
 
-  .restaurant-name {
-    @include media-body;
-    padding: 1em 0;
-    text-align: left;
-  }
   .main-nav__logo {
     a {
       font-size: 1.15em;
@@ -1319,6 +1361,28 @@ x:-o-prefocus, .lb-overlay img {
   }
   .main-nav__link {
     font-size: 1em;
+  }
+
+  // home
+  .image-header {
+    border: 3px solid #EEEEEE;
+  }
+  .image-header--top-left,
+  .image-header--top-right ,
+  .image-header--middle-left ,
+  .image-header--bottom-right {
+    width: 50%;
+    float: left;
+  }
+  .image-header--middle-middle ,
+  .image-header--bottom-left {
+    width: 25%;
+    float: left;
+  }
+  .image-header--middle-right {
+    width: 25%;
+    height: 400px;
+    float: right;
   }
   .menu-child {
     width: 32%;
