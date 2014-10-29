@@ -41,6 +41,8 @@
 $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
 $accent-color: {{ theme_settings.accent-color }};
+$nav-background-color: {{ theme_settings.nav-background-color}};
+$nav-color: {{ theme_settings.nav-color }};
 
 // Foods
 $food-separator-color: #f0f0f0;
@@ -532,7 +534,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 3;
-  background-color: $body-color;
+  background-color: $nav-background-color;
 }
 .main-nav__toggle {
   display: none;
@@ -541,12 +543,12 @@ body {
   height: 3.9em;
   text-align: left;
   text-indent: -9999px;
-  background-color: $body-color;
+  background-color: $nav-background-color;
   position: relative;
   &:before,
   &:after {
     position: absolute;
-    border: 2px solid #fff;
+    border: 2px solid $nav-color;
     top: 35%;
     left: 25%;
     right: 25%;
@@ -557,14 +559,14 @@ body {
   }
 }
   .toggle--close {
-    background-color: $body-color;
+    background-color: $nav-background-color;
   }
 .main-nav:not(:target) .toggle--open,
 .main-nav:target .toggle--close {
   display: block;
 }
 .main-nav__items {
-  background-color: $body-color;
+  background-color: $nav-background-color;
   display: none;
   height: auto;
   margin-bottom: 0;
@@ -575,7 +577,7 @@ body {
   font-weight: 700;
   padding: 1em 0 0 1.5em;
   a {
-    color: white;
+    color: $nav-color;
     transition: color .25s;
     font-size: 1.5em;
     &:hover {
@@ -589,7 +591,7 @@ body {
   }
   .main-nav__item {
     &:not(:last-child) {
-      border-bottom: 1px solid scale-color($body-color, $lightness: +25%);
+      border-bottom: 1px solid scale-color($nav-background-color, $lightness: +25%);
     }
     display: block;
     margin: 0;
@@ -598,7 +600,7 @@ body {
     background-color: scale-color($accent-color, $lightness: -15%);
   }
     .main-nav__link {
-      color: #fff;
+      color: $nav-color;
       display: block;
       height: auto;
       padding: 0.75em 1em;
@@ -620,7 +622,7 @@ body {
       height: 0;
       border: 0.313em solid transparent;
       border-bottom: none;
-      border-top-color: white;
+      border-top-color: $nav-color;
       content: '';
       vertical-align: middle;
       display: inline-block;
@@ -633,14 +635,14 @@ body {
   }
 
 .main-sub-nav__items {
-  background-color: scale-color($body-color, $lightness: -10%);
+  background-color: scale-color($nav-background-color, $lightness: -10%);
   display: none;
   margin-bottom: 0;
 }
   .main-sub-nav__item {
     @extend .main-nav__item;
     &:not(:last-child) {
-      border-bottom: 1px solid scale-color($body-color, $lightness: +5%);
+      border-bottom: 1px solid scale-color($nav-background-color, $lightness: +5%);
     }
   }
   .main-sub-nav__item--current {
@@ -1354,7 +1356,7 @@ x:-o-prefocus, .lb-overlay img {
     text-align: center;
   }
   .main-nav__logo {
-    padding: 1em 0 0 .5em;
+    padding: .5em 0 0 .5em;
   }
     .main-nav__toggle {
       display: none !important;
@@ -1371,6 +1373,7 @@ x:-o-prefocus, .lb-overlay img {
       }
         .main-nav__link {
           display: inline-block;
+          font-size: .75em;
         }
       .main-sub-nav__items {
         position: absolute;
@@ -1444,7 +1447,7 @@ x:-o-prefocus, .lb-overlay img {
   .main-nav__logo {
     float: none;
     position: absolute;
-    padding: 1em 0 0 3em;
+    padding: .5em 0 0 3em;
   }
 
   .footer__subscribe {
