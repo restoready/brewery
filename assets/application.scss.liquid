@@ -519,58 +519,12 @@ body {
   color: $body-color;
   background-color: $body-background;
 }
-
 .page {
   @extend .clearfix;
 }
-
-.main-header {
+.clearer {
+  clear: both;
 }
-  .logo {
-    text-align: center;
-  }
-    .logo__link {
-      display: block;
-      text-decoration: none;
-    }
-      .logo__image {
-        padding: 1em 0;
-        vertical-align: middle;
-        width: 180px;
-      }
-  .restaurant-name {
-    text-align: center;
-  }
-    .slogan {
-      color: scale-color($body-color, $lightness: +25%);
-      font-size: .9em;
-      font-style: italic;
-    }
-    .restaurant-name__link {
-      color: scale-color($body-color, $lightness: -25%);
-      font-family: {{ theme_settings.header-font }};
-      font-size: 2em;
-      line-height: 1;
-      text-decoration: none;
-    }
-  .phone-number {
-    margin: 1em 0;
-    text-align: center;
-  }
-    .phone-number__link {
-      color: $accent-color;
-      font-size: 1.5em;
-      text-decoration: none;
-      &:hover, &:focus {
-        color: #000;
-        .phone-number__label {
-          color: #000;
-        }
-      }
-    }
-      .phone-number__label {
-        color: $body-color;
-      }
 
 .main-nav {
   position: absolute;
@@ -578,6 +532,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 3;
+  background-color: $body-color;
 }
 .main-nav__toggle {
   display: none;
@@ -586,7 +541,7 @@ body {
   height: 3.9em;
   text-align: left;
   text-indent: -9999px;
-  background-color: $accent-color;
+  background-color: $body-color;
   position: relative;
   &:before,
   &:after {
@@ -609,10 +564,24 @@ body {
   display: block;
 }
 .main-nav__items {
-  background-color: $accent-color;
+  background-color: $body-color;
   display: none;
   height: auto;
   margin-bottom: 0;
+  clear: both;
+}
+.main-nav__logo {
+  float: left;
+  font-weight: 700;
+  padding: 1em 0 0 1.5em;
+  a {
+    color: white;
+    transition: color .25s;
+    font-size: 1.5em;
+    &:hover {
+      color: $accent-color;
+    }
+  }
 }
   .main-nav:target .main-nav__items {
     display: block;
@@ -620,7 +589,7 @@ body {
   }
   .main-nav__item {
     &:not(:last-child) {
-      border-bottom: 1px solid scale-color($accent-color, $lightness: +25%);
+      border-bottom: 1px solid scale-color($body-color, $lightness: +25%);
     }
     display: block;
     margin: 0;
@@ -636,6 +605,7 @@ body {
       font-size: 1.3em;
       font-weight: 700;
       text-decoration: none;
+      transition: background-color .25s;
       &:hover, &:focus {
         background-color: scale-color($accent-color, $lightness: -15%);
       }
@@ -650,7 +620,7 @@ body {
       height: 0;
       border: 0.313em solid transparent;
       border-bottom: none;
-      border-top-color: scale-color($accent-color, $lightness: +50%);
+      border-top-color: white;
       content: '';
       vertical-align: middle;
       display: inline-block;
@@ -663,14 +633,14 @@ body {
   }
 
 .main-sub-nav__items {
-  background-color: scale-color($accent-color, $lightness: -10%);
+  background-color: scale-color($body-color, $lightness: -10%);
   display: none;
   margin-bottom: 0;
 }
   .main-sub-nav__item {
     @extend .main-nav__item;
     &:not(:last-child) {
-      border-bottom: 1px solid scale-color($accent-color, $lightness: +5%);
+      border-bottom: 1px solid scale-color($body-color, $lightness: +5%);
     }
   }
   .main-sub-nav__item--current {
@@ -1330,22 +1300,18 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 112.5%;
   }
-  .identity {
-    @include media;
-  }
-  .logo {
-    @include media-aside;
-  }
-    .logo__image {
-      width: 120px;
-      margin-right: 1.5em;
-    }
+
   .restaurant-name {
     @include media-body;
     padding: 1em 0;
     text-align: left;
   }
-  .main-nav__toggle { 
+  .main-nav__logo {
+    a {
+      font-size: 1.15em;
+    }
+  }
+  .main-nav__toggle {
     width: 3.1em;
     height: 3.1em;
   }
@@ -1382,16 +1348,20 @@ x:-o-prefocus, .lb-overlay img {
     text-align: right;
     width: 35%;
   }
-  
+
   .main-nav {
     position: relative;
     text-align: center;
+  }
+  .main-nav__logo {
+    padding: 1em 0 0 .5em;
   }
     .main-nav__toggle {
       display: none !important;
     }
     .main-nav__items {
       display: block;
+      clear: none;
     }
       .main-nav__item {
         display: inline-block;
@@ -1414,7 +1384,7 @@ x:-o-prefocus, .lb-overlay img {
             padding-left: 1em;
           }
 
-  
+
   .footer__subscribe {
     .input {
       display: inline-block;
@@ -1471,6 +1441,12 @@ x:-o-prefocus, .lb-overlay img {
 
 // > Large
 @include at-query($min, $siteWidth) {
+  .main-nav__logo {
+    float: none;
+    position: absolute;
+    padding: 1em 0 0 3em;
+  }
+
   .footer__subscribe {
     margin: 0 auto;
     width: 75%;
