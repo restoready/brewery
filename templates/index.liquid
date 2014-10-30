@@ -1,82 +1,83 @@
 <div class="home-header">
   <div class="image-header image-header--top-left">
-    <div class="overlay"></div>
-    <div class="image-header__informations">
-      <p>{{ "Retrouvez nos spécialités au travers de diverses menus et formules" | t }}</p>
+    <div class="overlay overlay-top-left"></div>
+    <div class="image-header__informations image-header__informations-top-left">
+      <p>{{ theme_settings.image-header-top-left-text | t }}</p>
       <p>
-        <a class="button button-blue button--small" href="">
-          {{ "En savoir +" | t }}
+        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-top-left-link }}">
+          {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
   <div class="image-header image-header--top-right">
-    <div class="overlay"></div>
-    <div class="image-header__informations">
-      <p>{{ "Brewery vous propose de visitez la carte du restaurant" | t }}</p>
+    <div class="overlay overlay-top-right"></div>
+    <div class="image-header__informations image-header__informations-top-right">
+      <p>{{ theme_settings.image-header-top-right-text | t }}</p>
       <p>
-        <a class="button button-blue button--small" href="">
-          {{ "En savoir +" | t }}
+        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-top-right-link }}">
+          {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
   <div class="image-header image-header--middle-left">
-    <div class="overlay"></div>
-    <div class="image-header__informations">
-      <p>{{ "Envie d'un apéro ? Chez Brewery il y a tout ce qu'il faut" | t }}</p>
+    <div class="overlay overlay-middle-left"></div>
+    <div class="image-header__informations image-header__informations-middle-left">
+      <p>{{ theme_settings.image-header-middle-left-text | t }}</p>
       <p>
-        <a class="button button-blue button--small" href="">
-          {{ "En savoir +" | t }}
+        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-left-link }}">
+          {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
   <div class="image-header image-header--middle-middle">
-    <div class="overlay"></div>
-    <div class="image-header__informations">
-      <p>{{ "Contactez-nous" | t }}</p>
+    <div class="overlay overlay-middle-middle"></div>
+    <div class="image-header__informations image-header__informations-middle-middle">
+      <p>{{ theme_settings.image-header-middle-middle-text | t }}</p>
       <p>
-        <a class="button button-blue button--small" href="">
-          {{ "En savoir +" | t }}
+        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-middle-link }}">
+          {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
   <div class="image-header image-header--middle-right">
-    <div class="overlay"></div>
-    <div class="image-header__informations image-header__informations-double">
-      <p>{{ "Brewery, restaurant brasserie de démonstration de RestoReady" | t }}</p>
+    <div class="overlay overlay-middle-right"></div>
+    <div class="image-header__informations image-header__informations-middle-right">
+      <p>{{ theme_settings.image-header-middle-right-text | t }}</p>
       <p>
-        <a class="button button-blue button--small" href="">
-          {{ "En savoir +" | t }}
+        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-right-link }}">
+          {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
   <div class="image-header image-header--bottom-left">
-    <div class="overlay"></div>
-    <div class="image-header__informations">
-      <p>{{ "Nos formules" | t }}</p>
+    <div class="overlay overlay-bottom-left"></div>
+    <div class="image-header__informations image-header__informations-bottom-left">
+      <p>{{ theme_settings.image-header-bottom-left-text | t }}</p>
       <p>
-        <a class="button button-blue button--small" href="">
-          {{ "En savoir +" | t }}
+        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-bottom-left-link }}">
+          {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
   <div class="image-header image-header--bottom-right">
-    <div class="overlay"></div>
-    <div class="image-header__informations">
-      <p>{{ "Organisez vos événements en réservant une de nos salles à l'étage" | t }}</p>
+    <div class="overlay overlay-bottom-right"></div>
+    <div class="image-header__informations image-header__informations-bottom-right">
+      <p>{{ theme_settings.image-header-bottom-right-text | t }}</p>
       <p>
-        <a class="button button-blue button--small" href="">
-          {{ "En savoir +" | t }}
+        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-bottom-right-link }}">
+          {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
 </div>
+<div class="clearer"></div>
 
 {% if home_menus.size > 0 %}
   <section class="menus menus--featured">

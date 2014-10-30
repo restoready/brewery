@@ -36,6 +36,11 @@
     <script type="text/javascript">
       $( function() {
         $( '.has-sub-nav' ).doubleTapToGo();
+
+        $('body').on('click', '.image-header', function(){
+          $('.image-header').removeClass('active');
+          $(this).addClass('active');
+        });
       });
     </script>
   </body>

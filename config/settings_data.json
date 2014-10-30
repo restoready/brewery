@@ -20,7 +20,34 @@
     "image-header-middle-middle": true,
     "image-header-middle-right": true,
     "image-header-bottom-left": true,
-    "image-header-bottom-right": true
+    "image-header-bottom-right": true,
+    "image-header-informations-color": "#212121",
+    "image-header-informations-color-button": "#0f7fa6",
+    "image-header-informations-color-button-text-hover": "#ffffff",
+    "image-header-informations-button-text": "En savoir +",
+    "image-header-top-left-background-color": "#eeeeee",
+    "image-header-top-right-background-color": "#eeeeee",
+    "image-header-middle-left-background-color": "#eeeeee",
+    "image-header-middle-middle-background-color": "#eeeeee",
+    "image-header-middle-right-background-color": "#eeeeee",
+    "image-header-bottom-left-background-color": "#eeeeee",
+    "image-header-bottom-right-background-color": "#eeeeee",
+
+    "image-header-top-left-text": "Retrouvez nos spécialités au travers de diverses menus et formules",
+    "image-header-top-right-text": "Brewery vous propose de visitez la carte du restaurant",
+    "image-header-middle-left-text": "Envie d'un apéro ? Chez Brewery il y a tout ce qu'il faut",
+    "image-header-middle-middle-text": "Contactez-nous",
+    "image-header-middle-right-text": "Brewery, restaurant brasserie de démonstration de RestoReady",
+    "image-header-bottom-left-text": "Nos formules",
+    "image-header-bottom-right-text": "Organisez vos événements en réservant une de nos salles à l'étage",
+
+    "image-header-top-left-link": "menus",
+    "image-header-top-right-link": "menus/1-carte",
+    "image-header-middle-left-link": "menus/18-boissons",
+    "image-header-middle-middle-link": "messages/new",
+    "image-header-middle-right-link": "restaurant",
+    "image-header-bottom-left-link": "menus/8-formules",
+    "image-header-bottom-right-link": "pages/1-page-dexemple"
   },
   "presets":{
     "Original":{
@@ -44,7 +71,34 @@
       "image-header-middle-middle": true,
       "image-header-middle-right": true,
       "image-header-bottom-left": true,
-      "image-header-bottom-right": true
+      "image-header-bottom-right": true,
+      "image-header-informations-color": "#212121",
+      "image-header-informations-color-button": "#0f7fa6",
+      "image-header-informations-color-button-text-hover": "#ffffff",
+      "image-header-informations-button-text": "En savoir +",
+      "image-header-top-left-background-color": "#eeeeee",
+      "image-header-top-right-background-color": "#eeeeee",
+      "image-header-middle-left-background-color": "#eeeeee",
+      "image-header-middle-middle-background-color": "#eeeeee",
+      "image-header-middle-right-background-color": "#eeeeee",
+      "image-header-bottom-left-background-color": "#eeeeee",
+      "image-header-bottom-right-background-color": "#eeeeee",
+
+      "image-header-top-left-text": "Retrouvez nos spécialités au travers de diverses menus et formules",
+      "image-header-top-right-text": "Brewery vous propose de visitez la carte du restaurant",
+      "image-header-middle-left-text": "Envie d'un apéro ? Chez Brewery il y a tout ce qu'il faut",
+      "image-header-middle-middle-text": "Contactez-nous",
+      "image-header-middle-right-text": "Brewery, restaurant brasserie de démonstration de RestoReady",
+      "image-header-bottom-left-text": "Nos formules",
+      "image-header-bottom-right-text": "Organisez vos événements en réservant une de nos salles à l'étage",
+
+      "image-header-top-left-link": "menus",
+      "image-header-top-right-link": "menus/1-carte",
+      "image-header-middle-left-link": "menus/18-boissons",
+      "image-header-middle-middle-link": "messages/new",
+      "image-header-middle-right-link": "restaurant",
+      "image-header-bottom-left-link": "menus/8-formules",
+      "image-header-bottom-right-link": "pages/1-page-dexemple"
     }
   }
 }
