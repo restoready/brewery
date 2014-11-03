@@ -794,7 +794,7 @@ legend {
 }
 .home-header__title {
   display: block;
-  height: 9%;
+  height: 35px;
   padding: .5em 0;
   h1 {
     font-weight: bold;
@@ -1425,13 +1425,18 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 112.5%;
   }
-  html, body {
-    height: 100%;
-  }
-  .page {
-    height: 100%;
-  }
 
+  .nav-button {
+    height: 75px;
+    p {
+    }
+  }
+  .main-nav__items {
+    bottom: 75px;
+  }
+  .home-header__title {
+    height: 50px;
+  }
   // home
   .home-header--medium-up {
     overflow: hidden;
@@ -1453,17 +1458,15 @@ x:-o-prefocus, .lb-overlay img {
   .image-header--bottom-right {
     width: 50%;
     float: left;
-    height: 30.6666667%;
   }
   .image-header--middle-middle ,
   .image-header--bottom-left {
     width: 25%;
     float: left;
-    height: 30.6666667%;
   }
   .image-header--middle-right {
     width: 25%;
-    height: 61.3333333%;
+    height: 400px;
     float: right;
     border-bottom: none;
   }
@@ -1507,7 +1510,6 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 125%;
   }
-
   .footer__subscribe {
     .input {
       display: inline-block;
@@ -1521,18 +1523,6 @@ x:-o-prefocus, .lb-overlay img {
     }
   }
   // home
-
-  .image-header--top-left,
-  .image-header--top-right,
-  .image-header--middle-left,
-  .image-header--bottom-right,
-  .image-header--middle-middle ,
-  .image-header--bottom-left {
-    height: 28%;
-  }
-  .image-header--middle-right {
-    height: 56%;
-  }
   .opening-hours,
   .directions {
     width: 48%;
@@ -1576,9 +1566,34 @@ x:-o-prefocus, .lb-overlay img {
 
 // > Large
 @include at-query($min, $siteWidth) {
-
   .footer__subscribe {
     margin: 0 auto;
     width: 75%;
+  }
+}
+
+// > XLarge
+@include at-query($min, 1025px) {
+  html, body {
+    height: 100%;
+  }
+  .page {
+    height: 100%;
+  }
+
+  // home
+  .home-header__title {
+    height: 10%;
+  }
+  .image-header--top-left,
+  .image-header--top-right,
+  .image-header--middle-left,
+  .image-header--bottom-right,
+  .image-header--middle-middle ,
+  .image-header--bottom-left {
+    height: 30%;
+  }
+  .image-header--middle-right {
+    height: 60%;
   }
 }
