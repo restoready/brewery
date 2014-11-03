@@ -33,13 +33,12 @@
     </section>
 
     {{ 'jquery-2.1.1.min.js' | javascript_tag }}
-    {{ 'doubletaptogo.min.js' | javascript_tag }}
+    {{ 'fastclick.js' | javascript_tag }}
     <script type="text/javascript">
       $( function() {
-        // $( '.has-sub-nav' ).doubleTapToGo();
-
-        $('body').on('click', '.image-header', function(){
-          $('.image-header').removeClass('active');
+        FastClick.attach(document.body);
+        $('.image-header').click( function(){
+          $('.active').removeClass('active');
           $(this).addClass('active');
         });
       });
