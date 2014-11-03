@@ -552,18 +552,73 @@ body {
   clear: both;
 }
 
-.main-nav {
+.nav-button {
   position: fixed;
   bottom: 0;
+  cursor: pointer;
   left: 0;
   right: 0;
+  z-index: 2;
+  background-color: $body-color;
   height: 50px;
-  background-color: $body-background;
-  z-index: 1;
+  text-align: center;
+  p {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: white;
+    transition: color .25s;
+  }
+  &:hover p {
+    color: $accent-color;
+  }
 }
-.main-nav__items {
-  display: none;
+.main-nav {
+  overflow: hidden;
 }
+  .main-nav__items {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    height: 450px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    background-color: #eeeeee;
+    margin-bottom: 0;
+    border-left: 4px solid $body-color;
+    border-top: 4px solid $body-color;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+    .main-nav__item {
+      position: relative;
+      width: 50%;
+      float: left;
+      text-align: center;
+      height: 89.7px;
+      margin-bottom: 0;
+      border-right: 4px solid $body-color;
+      border-bottom: 4px solid $body-color;
+      box-sizing: border-box;
+    }
+      .main-nav__link {
+        position: absolute;
+        top: 0; bottom: 0; right: 0; left: 0;
+        text-decoration: none;
+        color: $body-color;
+        height: 100%;
+        width: 100%;
+      }
+        .main-nav__title {
+          position: absolute;
+          text-align: center;
+          width: 100%;
+          @include vertical-align;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: $body-color;
+        }
 .main-content {
   margin-bottom: 1em;
 }
