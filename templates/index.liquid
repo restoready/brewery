@@ -2,78 +2,78 @@
   <div class="home-header__title">
     <h1>Brewery</h1>
   </div>
-  <div class="image-header image-header--top-left">
+  <div class="image-overlay image-header--top-left">
     <div class="overlay overlay-top-left"></div>
-    <div class="image-header__informations image-header__informations-top-left">
+    <div class="overlay__informations image-header__informations-top-left">
       <p>{{ theme_settings.image-header-top-left-text | t }}</p>
       <p>
-        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-top-left-link }}">
+        <a class="button button-overlay" href="{{ localized_root_path }}/{{ theme_settings.image-header-top-left-link }}">
           {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
-  <div class="image-header image-header--top-right">
+  <div class="image-overlay image-header--top-right">
     <div class="overlay overlay-top-right"></div>
-    <div class="image-header__informations image-header__informations-top-right">
+    <div class="overlay__informations image-header__informations-top-right">
       <p>{{ theme_settings.image-header-top-right-text | t }}</p>
       <p>
-        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-top-right-link }}">
+        <a class="button button-overlay" href="{{ localized_root_path }}/{{ theme_settings.image-header-top-right-link }}">
           {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
-  <div class="image-header image-header--middle-left">
+  <div class="image-overlay image-header--middle-left">
     <div class="overlay overlay-middle-left"></div>
-    <div class="image-header__informations image-header__informations-middle-left">
+    <div class="overlay__informations image-header__informations-middle-left">
       <p>{{ theme_settings.image-header-middle-left-text | t }}</p>
       <p>
-        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-left-link }}">
+        <a class="button button-overlay" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-left-link }}">
           {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
-  <div class="image-header image-header--middle-middle">
+  <div class="image-overlay image-header--middle-middle">
     <div class="overlay overlay-middle-middle"></div>
-    <div class="image-header__informations image-header__informations-middle-middle">
+    <div class="overlay__informations image-header__informations-middle-middle">
       <p>{{ theme_settings.image-header-middle-middle-text | t }}</p>
       <p>
-        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-middle-link }}">
+        <a class="button button-overlay" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-middle-link }}">
           {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
-  <div class="image-header image-header--middle-right">
+  <div class="image-overlay image-header--middle-right">
     <div class="overlay overlay-middle-right"></div>
-    <div class="image-header__informations image-header__informations-middle-right">
+    <div class="overlay__informations image-header__informations-middle-right">
       <p>{{ theme_settings.image-header-middle-right-text | t }}</p>
       <p>
-        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-right-link }}">
+        <a class="button button-overlay" href="{{ localized_root_path }}/{{ theme_settings.image-header-middle-right-link }}">
           {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
-  <div class="image-header image-header--bottom-left">
+  <div class="image-overlay image-header--bottom-left">
     <div class="overlay overlay-bottom-left"></div>
-    <div class="image-header__informations image-header__informations-bottom-left">
+    <div class="overlay__informations image-header__informations-bottom-left">
       <p>{{ theme_settings.image-header-bottom-left-text | t }}</p>
       <p>
-        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-bottom-left-link }}">
+        <a class="button button-overlay" href="{{ localized_root_path }}/{{ theme_settings.image-header-bottom-left-link }}">
           {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
     </div>
   </div>
-  <div class="image-header image-header--bottom-right">
+  <div class="image-overlay image-header--bottom-right">
     <div class="overlay overlay-bottom-right"></div>
-    <div class="image-header__informations image-header__informations-bottom-right">
+    <div class="overlay__informations image-header__informations-bottom-right">
       <p>{{ theme_settings.image-header-bottom-right-text | t }}</p>
       <p>
-        <a class="button button-header" href="{{ localized_root_path }}/{{ theme_settings.image-header-bottom-right-link }}">
+        <a class="button button-overlay" href="{{ localized_root_path }}/{{ theme_settings.image-header-bottom-right-link }}">
           {{ theme_settings.image-header-informations-button-text | t }}
         </a>
       </p>
@@ -85,56 +85,67 @@
 
 {% if home_menus.size > 0 %}
   <section class="menus menus--featured">
-    <div class="wrapper">
-      <header class="section__header">
-        <h2 class="section__title">{{ "Cette semaine" | t }}</h2>
-      </header>
-      <main class="section__main">
+    <header class="section__header">
+      <h2 class="section__title">{{ "Nos spécialités" | t }}</h2>
+    </header>
+    <main class="section__main">
+      <ul class="block-grid">
         {% for menu in home_menus %}
-          <h3 class="menu__title">{{ menu.name }}</h3>
-          {% if menu.summary? %}
-            <div class="menu__description">
-              {{ menu.summary }}
-            </div>
-          {% endif %}
-          {% for food in menu.foods %}
-            {% assign_prices_to prices for food in menu %}
-            {% include 'food' with food:food %}
-          {% endfor %}
+            <li class="home-featured__image image-overlay {% if home_menus.size >= 2 %}home-featured-two{% endif %} {% if home_menus.size >= 3 %}home-featured-three{% endif %} {% if home_menus.size >= 4 %}home-featured-four{% endif %} {% if home_menus.size >= 6 %}home-featured-six{% endif %}" style="background-image:url('{{ menu.main_image | custom_image_url: "1500x400#" }}');">
+              <div class="overlay"></div>
+              <div class="overlay__informations">
+                {% if menu.parent? %}
+                <p class="menu__title">{{ menu.name }}</p>
+                <a class="button button-overlay" href="{{ menu.root_parent.url }}#menu-{{menu.id}}">
+                  {{ "Voir le menu" | t }}
+                </a>
+              {% else %}
+                <p class="menu__title">{{ menu.name }}</p>
+                <a class="button button-overlay" href="{{ menu.url }}">
+                  {{ "Voir le menu" | t }}
+                </a>
+              {% endif %}
+              </div>
+            </li>
         {% endfor %}
-      </main>
-      <footer class="section__footer menus__footer">
-        <p>
-          <a class="button" href="{{ restaurant.menus_path }}">
-            {{ "Voir toute la carte" | t }}
-          </a>
-        </p>
-      </footer>
-    </div>
+      </ul>
+    </main>
   </section>
 {% endif %}
 
 {% if home_foods.size > 0 %}
   <section class="foods foods--featured">
-    <div class="wrapper">
-      <header class="section__header">
-        <h2 class="section__title">{{ "Nos suggestions" | t }}</h2>
-      </header>
-      <main class="section__main">
+    <header class="section__header">
+        <h2 class="section__title">{{ "Plats" | t }}</h2>
+    </header>
+    <main class="section__main">
+      <ul class="block-grid">
         {% for food in home_foods %}
-          {% include 'food' with food:food %}
+          <li class="home-featured__image image-overlay {% if home_foods.size >= 2 %}home-featured-two{% endif %} {% if home_foods.size >= 3 %}home-featured-three{% endif %} {% if home_foods.size >= 4 %}home-featured-four{% endif %} {% if home_foods.size >= 6 %}home-featured-six{% endif %}" style="background-image:url('{{ food.main_image | custom_image_url: "1500x400#" }}');">
+            <div class="overlay"></div>
+            <div class="overlay__informations">
+              {% assign relative_menu = food.menu %}
+              <p class="food__title">{{ food.name }}</p>
+              <a class="button button-overlay" href="{% if relative_menu.parent? %}{{ relative_menu.root_parent.url }}#menu-{{relative_menu.id}}{% else %}{{ relative_menu.url }}{% endif %}">
+                {{ "Voir le plat" | t }}
+              </a>
+            </div>
+          </li>
         {% endfor %}
-      </main>
-      <footer class="section__footer foods__footer">
-        <p>
-          <a class="button" href="{{ restaurant.menus_path }}">
-            {{ "Voir toute la carte" | t }}
-          </a>
-        </p>
-      </footer>
-    </div>
+      </ul>
+    </main>
   </section>
 {% endif %}
+
+<div class="clearer"></div>
+
+<div class="see-all-button">
+  <p>
+    <a class="button" href="{{ restaurant.menus_path }}">
+      {{ "Voir toute la carte" | t }}
+    </a>
+  </p>
+</div>
 
 <!-- <div class="wrapper">
   <section class="opening-hours">
