@@ -606,9 +606,16 @@ body {
         position: absolute;
         top: 0; bottom: 0; right: 0; left: 0;
         text-decoration: none;
-        color: $body-color;
         height: 100%;
         width: 100%;
+        background-color: #EEEEEE;
+        transition: background-color .25s;
+        &:hover {
+          background-color: $body-color;
+          .main-nav__title {
+            color: #EEEEEE;
+          }
+        }
       }
         .main-nav__title {
           position: absolute;
