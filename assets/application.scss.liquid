@@ -532,7 +532,7 @@ form.form-horizontal,
 .button-overlay {
   border: 2px solid $image-header-informations-color-button;
   color: white;
-  &:hover {
+  &:hover , &:focus{
     background-color: $image-header-informations-color-button;
     color: $image-header-informations-color-button-text-hover;
   }
@@ -542,7 +542,7 @@ form.form-horizontal,
   color: white;
   background-color: $accent-color;
   transition: background-color .25s;
-  &:hover {
+  &:hover, &:focus {
     background-color: transparent;
     color: $accent-color;
   }
@@ -552,7 +552,7 @@ form.form-horizontal,
   color: white;
   background-color: transparent;
   transition: background-color .25s;
-  &:hover {
+  &:hover, &:focus {
     background-color: white;
     color: $accent-color;
   }
@@ -590,7 +590,7 @@ body {
     color: white;
     transition: color .25s;
   }
-  &:hover p {
+  &:hover p, &:focus p {
     color: $body-background;
   }
 }
@@ -631,7 +631,7 @@ body {
         width: 100%;
         background-color: $body-background;
         transition: background-color .25s;
-        &:hover {
+        &:hover, &:focus {
           background-color: $accent-color;
           .main-nav__title {
             color: $body-background;
@@ -650,10 +650,6 @@ body {
 .main-content {
   margin-bottom: 1em;
 }
-  .section__header {
-  }
-  .section__footer {
-  }
 
 .main-footer {
   background-color: $body-background;
@@ -806,9 +802,15 @@ legend {
 // Default page
 
 .page-header {
-  padding: 3.5em 0 .25em 0;
+  text-align: center;
 }
-
+.section__header {
+  text-align: center;
+  .section__title {
+    color: $body-color;
+    font-size: 3em;
+  }
+}
 .page-body {
   ol, ul, dl {
     margin-left: 2em;
@@ -851,7 +853,7 @@ legend {
 .image-overlay {
   position: relative;
   box-sizing: border-box;
-  &:hover {
+  &:hover, &:focus {
     // hover default (with image)
     .overlay {
       opacity: .8;
@@ -1017,21 +1019,11 @@ legend {
 .menus--featured {
   text-align: center;
   margin-bottom: 1em;
-  .section__title {
-    color: $body-color;
-    margin-bottom: 0;
-    font-size: 3em;
-  }
 }
 .foods--featured {
   overflow: hidden;
   text-align: center;
   margin-bottom: 1em;
-  .section__title {
-    color: $body-color;
-    margin-bottom: 0;
-    font-size: 3em;
-  }
 }
 .block-grid {
   margin-bottom: 0;
@@ -1054,10 +1046,6 @@ legend {
   text-align: center;
   width: 100%;
   padding: 1em 0;
-  .section__title {
-    color: $body-color;
-    font-size: 3em;
-  }
 }
   .opening-days {
     @extend .clearfix;
@@ -1079,10 +1067,6 @@ legend {
 
 .directions, .business-view {
   text-align: center;
-  .section__title {
-    color: $body-color;
-    font-size: 3em;
-  }
 }
   .map {
     margin-bottom: 1em;
@@ -1111,6 +1095,11 @@ legend {
     text-align: center;
   }
 
+// All menus
+.menus__footer {
+  text-align: center;
+}
+
 // Menu item
 .menu {
   padding-bottom: 1em;
@@ -1121,9 +1110,7 @@ legend {
     .menu__image {
       @extend .auto;
     }
-  .menu__header {
 
-  }
     .menu__title,
     .food__title {
       color: white;
@@ -1135,47 +1122,44 @@ legend {
   }
 
 .menus__menu-link {
-    color: scale-color($accent-color, $saturation: -75%);
-    &:hover, &:focus {
-      color: $accent-color;
-    }
+  color: $accent-color;
+  transition: color .25s;
+  &:hover, &:focus {
+    color: scale-color($accent-color, $lightness: +25%);
   }
-  .menus__separator {
-    border: none;
-    border-top: medium solid $food-separator-color;
-    color: $food-separator-color;
-    margin: 1em 0;
-    padding: 0;
-  }
+}
 
 // Menu children
 .menu-children {
+  overflow: hidden;
+}
+.menu-children {
+  &>li {
+    border-right: 3px solid $body-background;
+    border-left: 3px solid $body-background;
+  }
 }
   .menu-child {
-    display: inline-block;
-    margin-bottom: .5em;
+    float: left;
     text-align: center;
-    vertical-align: top;
-    width: 49%;
+    width: 50%;
+    box-sizing: border-box;
   }
     .menu-child__link {
       display: block;
-      padding: .5em;
       text-decoration: none;
       &:hover, &:focus {
         .menu-child__title {
-          color: $accent-color;
+          color: scale-color($accent-color, $lightness: +25%);
         }
       }
     }
       .menu-child__image {
-        @extend .auto;
-        border-radius: 50%;
-        margin-bottom: .5em;
-        vertical-align: middle;
+        width: 100%;
       }
       .menu-child__title {
-        color: scale-color($accent-color, $saturation: -75%);
+        transition: color .25s;
+        color: $accent-color;
         display: block;
       }
 
@@ -1351,7 +1335,7 @@ legend {
   filter: alpha(opacity=80); /* internet explorer */
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=80)"; /*IE8*/
 }
-.lb-prev:hover, .lb-next:hover{
+.lb-prev:image-header-informations-color-button-text-hover  , .lb-next:hover{
   opacity: 1;
   filter: alpha(opacity=99); /* internet explorer */
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
@@ -1574,7 +1558,7 @@ x:-o-prefocus, .lb-overlay img {
     padding: 0 .5em;
   }
   .menu-child {
-    width: 32%;
+    width: 33.3333333%;
   }
   .gallery__item {
     display: inline-block;
@@ -1629,7 +1613,7 @@ x:-o-prefocus, .lb-overlay img {
     }
 
   .menu-child {
-    width: 19%;
+    width: 20%;
   }
 
   .gallery__item {
