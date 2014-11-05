@@ -1040,12 +1040,14 @@ legend {
   margin-bottom: 1.5em;
 }
 .opening-hours {
-  background-color: #fff;
-  margin-bottom: 1em;
+  margin-bottom: .75em;
+  text-align: center;
+  width: 100%;
+  padding: 1em 0;
   .section__title {
-    color: #444;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: .5em;
+    color: $body-color;
+    margin-bottom: 0;
+    font-size: 3em;
   }
 }
   .opening-days {
@@ -1054,15 +1056,13 @@ legend {
   }
     .opening-day {
       color: $body-color;
-      clear: left;
-      float: left;
       font-size: 1em;
-      width: 25%;
+      font-weight: bold;
     }
     .opening-shifts {
       color: scale-color($accent-color, $saturation: -75%);
-      font-size: 1em;
-      margin-left: 30%;
+      font-size: 1.25em;
+      margin-bottom: .5em;
     }
   .opening-hours__information {
     margin-bottom: 1em;
@@ -1595,13 +1595,21 @@ x:-o-prefocus, .lb-overlay img {
       }
     }
   }
-  .opening-hours,
-  .directions {
-    width: 48%;
+  
+   .opening-hours {
+    text-align: left;
+    padding: 1em 0;
   }
-  .opening-hours {
-    float: left;
-  }
+    .opening-day {
+      clear: left;
+      float: left;
+      width: 90px;
+      padding-top: 7px;
+    }
+    .opening-shifts {
+      margin-left: 150px;
+    }
+
   .directions {
     float: right;
   }
