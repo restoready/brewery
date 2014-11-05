@@ -1380,18 +1380,21 @@ x:-o-prefocus, .lb-overlay img {
 
 
 // Contact page
+.page-body--contact {
+  margin-bottom: 2em;
+}
 .contact-item {
   a {
     color: $accent-color;
     text-decoration: none;
+    transition: color .25s;
     &:hover, &:focus {
-      color: #999;
+      color: scale-color($accent-color, $lightness: +25%);
     }
   }
 }
   .contact-item__name {
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    color: #444;
+    color: $body-color;
     margin-bottom: .5em;
   }
   .contact-item__label {
@@ -1635,17 +1638,8 @@ x:-o-prefocus, .lb-overlay img {
   }
 
   .aside--contact {
-    float: left;
     font-size: 75%;
-    width: floor($siteWidth / 3);
   }
-  .page-header--contact,
-  .page-body--contact {
-    margin-left: ceil($siteWidth / 3) + $gutter;
-  }
-    .contact-item__name {
-      margin-top: 2.15em;
-    }
 }
 
 // > Large

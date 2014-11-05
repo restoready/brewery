@@ -1,7 +1,42 @@
 <div class="wrapper">
+  <section class="page-header page-header--contact">
+    <header class="section__header page-header__header">
+      <h1 class="section__title page-header__title">{{ contact_settings.contact_title }}</h1>
+    </header>
+    <main class="section__main page-header__description">
+      {{ contact_settings.contact_content }}
+    </main>
+  </section>
+
+  <section class="page-body page-body--contact">
+    {% contact_form %}
+      <fieldset class="field-group">
+        <div class="input">
+          <label for="contactFromName">{{ "Votre nom :" | t }}</label>
+          <input id="contactFromName" name="message[from_name]" type="text">
+        </div>
+        <div class="input">
+          <label for="contactFromEmail">{{ "Votre adresse email :" | t }}</label>
+          <input id="contactFromEmail" name="message[from_email]" type="text">
+        </div>
+        <div class="input">
+          <label for="contactPhone">{{ "Votre numéro de téléphone :" | t }}</label>
+          <input id="contactPhone" name="message[phone]" type="text">
+        </div>
+        <div class="textarea">
+          <label for="contactBody">{{ "Votre message :" | t }}</label>
+          <textarea id="contactBody" name="message[body]"></textarea>
+        </div>
+        <div class="submit">
+          <input class="button" type="submit" value="{{ "Envoyer" | t }}">
+        </div>
+      </fieldset>
+    {% endcontact_form %}
+  </section>
+
   <aside class="aside aside--contact" itemscope itemtype="http://schema.org/Restaurant">
     <div class="contact-item">
-      <h3 class="contact-item__name" itemprop="name">{{ restaurant.name }}</h3>
+      <h2 class="contact-item__name" itemprop="name">{{ restaurant.name }}</h2>
     </div>
     <div class="contact-item">
       <p>
@@ -37,62 +72,5 @@
         {% endif %}
       </p>
     </div>
-
-    <div class="contact-item">
-      <p>
-        <span class="contact-item__label">{{ "Horaires :" | t }}</span>
-      </p>
-      <dl class="opening-days">
-        {% for day in opening_hours %}
-          {{ day.meta_microdata }}
-          <dt class="opening-day">
-            {{ day.name }}
-          </dt>
-          <dd class="opening-shifts">
-            {{ day.shifts }}
-          </dd>
-        {% endfor %}
-      </dl>
-      {% if restaurant.opening_hours_information? %}
-        <div class="opening-hours__information">
-          <p>{{ restaurant.opening_hours_information }}</p>
-        </div>
-      {% endif %}
-    </div>
   </aside>
-
-  <section class="page-header page-header--contact">
-    <header class="section__header page-header__header">
-      <h1 class="section__title page-header__title">{{ contact_settings.contact_title }}</h1>
-    </header>
-    <main class="section__main page-header__description">
-      {{ contact_settings.contact_content }}
-    </main>
-  </section>
-
-  <section class="page-body page-body--contact">
-    {% contact_form %}
-      <fieldset class="field-group">
-        <div class="input">
-          <label for="contactFromName">{{ "Votre nom :" | t }}</label>
-          <input id="contactFromName" name="message[from_name]" type="text">
-        </div>
-        <div class="input">
-          <label for="contactFromEmail">{{ "Votre adresse email :" | t }}</label>
-          <input id="contactFromEmail" name="message[from_email]" type="text">
-        </div>
-        <div class="input">
-          <label for="contactPhone">{{ "Votre numéro de téléphone :" | t }}</label>
-          <input id="contactPhone" name="message[phone]" type="text">
-        </div>
-        <div class="textarea">
-          <label for="contactBody">{{ "Votre message :" | t }}</label>
-          <textarea id="contactBody" name="message[body]"></textarea>
-        </div>
-        <div class="submit">
-          <input class="button" type="submit" value="{{ "Envoyer" | t }}">
-        </div>
-      </fieldset>
-    {% endcontact_form %}
-  </section>
 </div>
