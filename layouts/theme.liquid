@@ -45,6 +45,11 @@
         $('.nav-button').click( function(){
           $('.main-nav__items').slideToggle("fast");
         });
+        $('.button-see-location').click(function (e) {
+          e.preventDefault();
+          $(this).parents('.directions__footer').siblings('.directions__overlay').fadeOut('slow');
+          $(this).fadeOut('slow');
+        });
       });
     </script>
   </body>

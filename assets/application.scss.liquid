@@ -543,7 +543,17 @@ form.form-horizontal,
   background-color: $accent-color;
   transition: background-color .25s;
   &:hover {
-    background-color: transparent !important;
+    background-color: transparent;
+    color: $accent-color;
+  }
+}
+.button-see-location {
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+  transition: background-color .25s;
+  &:hover {
+    background-color: white;
     color: $accent-color;
   }
 }
@@ -1046,7 +1056,6 @@ legend {
   padding: 1em 0;
   .section__title {
     color: $body-color;
-    margin-bottom: 0;
     font-size: 3em;
   }
 }
@@ -1068,22 +1077,31 @@ legend {
     margin-bottom: 1em;
   }
 
-
-
 .directions, .business-view {
-  background-color: #fff;
-  margin-bottom: 1em;
+  text-align: center;
   .section__title {
     color: $body-color;
-    border-bottom: 1px solid scale-color($body-color, $lightness: +85%);
-    margin-bottom: 1em;
+    font-size: 3em;
   }
 }
   .map {
     margin-bottom: 1em;
+    position: relative;
   }
+    .directions__overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: $accent-color;
+      opacity: .65;
+    }
+    .directions__footer {
+      position: absolute;
+      text-align: center;
+      left: 0; right: 0; bottom: 2em;
+    }
     .map__image {
       @extend .auto;
+      width: 100%;
     }
   .address {
     color: $body-color;
@@ -1609,10 +1627,6 @@ x:-o-prefocus, .lb-overlay img {
     .opening-shifts {
       margin-left: 150px;
     }
-
-  .directions {
-    float: right;
-  }
 
   .menu-child {
     width: 19%;
