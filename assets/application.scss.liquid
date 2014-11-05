@@ -1107,13 +1107,43 @@ legend {
   .menu--featured {
 
   }
+  .menu__main-image {
+    position: relative;
+    display: block;
+    &:hover {
+      .menu__main-image-overlay {
+        opacity: 0;
+      }
+      .menu__header {
+        opacity: 0;
+      }
+    }
+  }
     .menu__image {
       @extend .auto;
+      display: block;
     }
-
-    .menu__title,
-    .food__title {
+    .menu__main-image-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: $accent-color;
+      opacity: .65;
+      transition: opacity .25s;
+    }
+    .menu__header {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      text-align: center;
+      width: 100%;
+      opacity: 1;
+      transition: opacity .25s;
+    }
+    .menu__title {
       color: white;
+      font-size: 3em;
+      margin-bottom: .5em;
+    }
+    .food__title {
       margin-bottom: .5em;
     }
   .menu__description {
@@ -1154,8 +1184,24 @@ legend {
         }
       }
     }
+    .menu-child-image-wrapper {
+      position: relative;
+      &:hover {
+        .menu-child-image-overlay {
+          opacity: 0;
+        }
+      }
+    }
+    .menu-child-image-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: $accent-color;
+      opacity: .25;
+      transition: opacity .25s;
+    }
       .menu-child__image {
         width: 100%;
+        display: block;
       }
       .menu-child__title {
         transition: color .25s;
@@ -1266,6 +1312,9 @@ legend {
       }
       .photo__link-image {
         position: relative;
+        img {
+          display: block;
+        }
         .photo__link-image-overlay {
           position: absolute;
           top: 0; left: 0; right: 0; bottom: 0;
@@ -1281,7 +1330,6 @@ legend {
           font-size: 1em;
           font-weight: 700;
           background-color: $body-color;
-          margin-top: -10px;
         }
 
 /**
