@@ -9,12 +9,12 @@
     <div class="footer__subscribe">
       {% newsletter_subscribe_form %}
         <fieldset class="field-group">
+          <label class="subscribe__label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
           <div class="input">
-            <label class="subscribe__label" for="subscriberEmail">{{ "Entrez votre email pour recevoir notre newsletter&nbsp;:" | t }}</label>
             <input id="subscriberEmail" name="subscriber[email]" type="email" required>
           </div>
           <div class="submit">
-            <button class="button" type="submit">
+            <button class="button button-subscribe" type="submit">
               <i class="icon-check"></i> {{ "Valider" | t }}
             </button>
           </div>

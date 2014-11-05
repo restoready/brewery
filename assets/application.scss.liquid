@@ -502,7 +502,7 @@ form.form-horizontal,
   cursor: pointer;
   display: inline-block;
   margin: 0;
-  padding: .5em 2em;
+  padding: .15em 2em;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -538,6 +538,17 @@ form.form-horizontal,
     color: $image-header-informations-color-button-text-hover;
   }
 }
+.button-subscribe {
+  border: 2px solid $body-color;
+  color: white;
+  background-color: $body-color;
+  transition: background-color .25s;
+  &:hover {
+    background-color: transparent !important;
+    color: $body-color;
+  }
+}
+
 
 // ===========================================================================
 // #Layout
@@ -585,7 +596,7 @@ body {
     bottom: 50px;
     left: 0;
     right: 0;
-    background-color: $body-background;
+    background-color: $body-color;
     margin-bottom: 0;
     border-left: 4px solid $body-color;
     border-top: 4px solid $body-color;
@@ -638,14 +649,17 @@ body {
 .main-footer {
   background-color: $body-background;
   border-top: 1px solid scale-color($body-color, $lightness: +70%);
+  display: block;
+  margin-bottom: 5em;
 }
   .back-to-top {
-    padding: $gutter;
+    padding: 1em;
     text-align: center;
   }
     .back-to-top__link {
       color: scale-color($body-color, $lightness: +25%);
       text-decoration: none;
+      transition: color .25s;
       &:hover, &:focus {
         color: $body-color;
       }
@@ -653,11 +667,19 @@ body {
       .back-to-top__label {
       }
   .footer__subscribe {
+    .input {
+      float: left;
+      width: 70%;
+    }
+    .submit {
+      float: left;
+      width: 20%;
+    }
   }
   .footer__social {
   }
     .social__items {
-      margin: .75em 0;
+      margin: 0;
       text-align: center;
     }
       .social__item {
@@ -684,12 +706,13 @@ body {
           }
 
   .footer__legal {
-    margin-bottom: 1em;
     text-align: center;
+    font-size: .75em;
   }
     .legal__link {
       color: scale-color($body-color, $lightness: +25%);
       text-decoration: none;
+      transition: color .25s;
       &:hover, &:focus {
         color: $body-color;
       }
@@ -804,11 +827,16 @@ legend {
 }
 .home-header__title {
   display: block;
+  position: relative;
   height: 35px;
   padding: .5em 0;
   h1 {
     font-weight: bold;
     font-size: 1em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    @include vertical-align;
   }
 }
 .image-overlay {
@@ -986,6 +1014,7 @@ legend {
   }
 }
 .foods--featured {
+  overflow: hidden;
   text-align: center;
   margin-bottom: 1em;
   .section__title {
@@ -1007,6 +1036,7 @@ legend {
 }
 .see-all-button {
   text-align: center;
+  margin-bottom: 1.5em;
 }
 .opening-hours {
   background-color: #fff;
@@ -1433,7 +1463,9 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 112.5%;
   }
-
+  .button {
+    padding: .225em 2em;
+  }
   .nav-button {
     height: 75px;
     p {
@@ -1539,18 +1571,13 @@ x:-o-prefocus, .lb-overlay img {
   select {
     font-size: 125%;
   }
-  .footer__subscribe {
-    .input {
-      display: inline-block;
-      width: 70%;
-    }
-    .submit {
-      display: inline-block;
-      width: 20%;
-      vertical-align: top;
-      margin-top: 1.65em;
-    }
+  .button {
+    padding: .3em 2em;
   }
+  .main-nav__item {
+    width: 33.3333333%;
+  }
+
   // home
   .home-featured-three {
     width: 33.3333333%;
@@ -1633,6 +1660,9 @@ x:-o-prefocus, .lb-overlay img {
 @include at-query($min, 1025px) {
   html, body {
     height: 100%;
+  }
+  .main-nav__item {
+    width: 25%;
   }
   .page {
     height: 100%;
