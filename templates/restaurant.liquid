@@ -13,31 +13,11 @@
 
 {% if photos.size > 0 %}
   <section class="restaurant-gallery">
-    <div class="wrapper">
-      <main class="section__main gallery">
-        {% for photo in photos %}
-          {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
-        {% endfor %}
-      </main>
-    </div>
+    <main class="section__main gallery">
+      {% for photo in photos %}
+        {% include 'photo' with photo:photo, i:forloop.index, l:forloop.length %}
+      {% endfor %}
+    </main>
   </section>
 {% endif %}
-
-{% if theme_settings.display_google_business_view_embed %}
-  <section class="business-view">
-    <div class="wrapper">
-      <header class="section__header">
-        <h2 class="section__title">{{ "Visite virtuelle" | t }}</h2>
-      </header>
-      {% google_business_view_embed: "size:100%x300" %}
-      {% if theme_settings.display_google_business_view_url %}
-      <footer class="section__footer">
-        <p>
-          <a class="button business__link" href="{% google_business_view_url %}">
-            {{ "Visiter" | t }}
-          </a>
-        </p>
-      </footer>
-      {% endif %}
-  </section>
-{% endif %}
+<div class="clearer"></div>

@@ -1249,32 +1249,39 @@ legend {
 }
   .gallery__item {
     position: relative;
-    margin-bottom: 1em;
   }
     .gallery__img {
       img {
         @extend .auto;
-        vertical-align: middle;
       }
     }
       .photo__link {
         display: block;
-        &:hover {
-          .photo__caption {
-            background-color: $accent-color;
+        text-decoration: none;
+        &:hover, &:focus {
+          .photo__link-image-overlay {
+            opacity: 0;
           }
         }
       }
-        .photo__caption {
-          color: white;
+      .photo__link-image {
+        position: relative;
+        .photo__link-image-overlay {
           position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background-color: $accent-color;
+          opacity: .25;
+          transition: opacity .25s;
+        }
+      }
+        .photo__caption {
+          display: block;
           padding: .5em;
+          color: white;
           font-size: 1em;
           font-weight: 700;
-          background-color: rgba($body-color, .75);
+          background-color: $body-color;
+          margin-top: -10px;
         }
 
 /**
@@ -1561,9 +1568,8 @@ x:-o-prefocus, .lb-overlay img {
     width: 33.3333333%;
   }
   .gallery__item {
-    display: inline-block;
-    vertical-align: top;
-    width: 45%;
+    float: left;
+    width: 46%;
     margin: 2%;
   }
 }
@@ -1617,7 +1623,7 @@ x:-o-prefocus, .lb-overlay img {
   }
 
   .gallery__item {
-    width: 30%;
+    width: 31.333333%;
     margin: 1%;
   }
   .lb-overlay a.lb-close{
