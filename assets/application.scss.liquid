@@ -52,6 +52,9 @@ $image-header-middle-middle-background-color: {{ theme_settings.image-header-mid
 $image-header-middle-right-background-color: {{ theme_settings.image-header-middle-right-background-color }};
 $image-header-bottom-left-background-color: {{ theme_settings.image-header-bottom-left-background-color }};
 $image-header-bottom-right-background-color: {{ theme_settings.image-header-bottom-right-background-color }};
+
+$home-featured-background-color: {{ theme_settings.home-featured-background-color }};
+$home-featured-color: {{ theme_settings.home-featured-color }};
 // Foods
 $food-separator-color: #f0f0f0;
 
@@ -930,6 +933,19 @@ legend {
   width: 100%;
   @include vertical-align;
 }
+.home-featured__no-image-informations {
+  position: absolute;
+  padding: 0 .5em;
+  text-align: center;
+  width: 100%;
+  @include vertical-align;
+  .food__title {
+    color: $home-featured-color;
+  }
+  .button-overlay {
+    color: $home-featured-color;
+  }
+}
 // information display when no image
 .image-header__informations-top-left {
   {% unless theme_settings.image-header-top-left %}
@@ -1030,7 +1046,7 @@ legend {
   text-align: center;
   margin-bottom: 1em;
   .food__title {
-    color: white;
+    //color: white;
     font-size: 1em;
     margin-bottom: .5em;
   }
@@ -1042,8 +1058,7 @@ legend {
 .home-featured__image {
   @extend .auto;
   height: 200px;
-  background-size: cover;
-  background-position: center center;
+  background-color: $home-featured-background-color;
   border-bottom: 6px solid $body-background;
   box-sizing: border-box;
   margin-bottom: 0;

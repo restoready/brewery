@@ -115,9 +115,9 @@
     <main class="section__main">
       <ul class="block-grid">
         {% for menu in home_menus %}
-            <li class="home-featured__image image-overlay {% if home_menus.size >= 2 %}home-featured-two{% endif %} {% if home_menus.size >= 3 %}home-featured-three{% endif %} {% if home_menus.size >= 4 %}home-featured-four{% endif %} {% if home_menus.size >= 6 %}home-featured-six{% endif %}" style="background-image:url('{{ menu.main_image | custom_image_url: "1500x400#" }}');">
-              <div class="overlay"></div>
-              <div class="overlay__informations">
+            <li class="home-featured__image image-overlay {% if home_menus.size >= 2 %}home-featured-two{% endif %} {% if home_menus.size >= 3 %}home-featured-three{% endif %} {% if home_menus.size >= 4 %}home-featured-four{% endif %} {% if home_menus.size >= 6 %}home-featured-six{% endif %}" {% if menu.main_image? %} style="background-image:url('{{ menu.main_image | custom_image_url: "1500x400#" }}');background-size: cover;background-position: center center;" {% endif %}>
+              <div class="{% if menu.main_image? %}overlay{% endif %}"></div>
+              <div class="{% if menu.main_image? %}overlay__informations{% else %}home-featured__no-image-informations{% endif %}">
                 {% if menu.parent? %}
                 <p class="menu__title">{{ menu.name }}</p>
                 <a class="button button-overlay" href="{{ menu.root_parent.url }}#menu-{{menu.id}}">
@@ -144,9 +144,9 @@
     <main class="section__main">
       <ul class="block-grid">
         {% for food in home_foods %}
-          <li class="home-featured__image image-overlay {% if home_foods.size >= 2 %}home-featured-two{% endif %} {% if home_foods.size >= 3 %}home-featured-three{% endif %} {% if home_foods.size >= 4 %}home-featured-four{% endif %} {% if home_foods.size >= 6 %}home-featured-six{% endif %}" style="background-image:url('{{ food.main_image | custom_image_url: "1500x400#" }}');">
-            <div class="overlay"></div>
-            <div class="overlay__informations">
+          <li class="home-featured__image image-overlay {% if home_foods.size >= 2 %}home-featured-two{% endif %} {% if home_foods.size >= 3 %}home-featured-three{% endif %} {% if home_foods.size >= 4 %}home-featured-four{% endif %} {% if home_foods.size >= 6 %}home-featured-six{% endif %}" {% if food.main_image? %} style="background-image:url('{{ food.main_image | custom_image_url: "1500x400#" }}');background-size:cover;background-position: center center;" {% endif %}>
+            <div class="{% if food.main_image? %}overlay{% endif %}"></div>
+            <div class="{% if food.main_image? %}overlay__informations{% else %}home-featured__no-image-informations{% endif %}">
               {% assign relative_menu = food.menu %}
               <p class="food__title">{{ food.name }}</p>
               <a class="button button-overlay" href="{% if relative_menu.parent? %}{{ relative_menu.root_parent.url }}#menu-{{relative_menu.id}}{% else %}{{ relative_menu.url }}{% endif %}">
