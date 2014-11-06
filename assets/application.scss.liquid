@@ -55,6 +55,9 @@ $image-header-bottom-right-background-color: {{ theme_settings.image-header-bott
 
 $home-featured-background-color: {{ theme_settings.home-featured-background-color }};
 $home-featured-color: {{ theme_settings.home-featured-color }};
+
+$menu-featured-background: {{ theme_settings.menu-featured-background }};
+
 // Foods
 $food-separator-color: #f0f0f0;
 
@@ -1152,6 +1155,11 @@ legend {
   }
 }
   .menu--featured {
+    .block-grid {
+      border: 3px solid $menu-featured-background;
+      border-radius: 1.5em;
+      padding-top: 1.5em;
+    }
 
   }
   .menu__main-image {
