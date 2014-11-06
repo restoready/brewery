@@ -841,17 +841,21 @@ legend {
 .home-header__title {
   display: block;
   position: relative;
-  height: 50px;
   padding: .5em 0;
-  h1 {
-    font-weight: bold;
-    font-size: 2em;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    @include vertical-align;
-    font-family: $headerFontStack;
-  }
+  height: 50px;
+}
+.logo {
+  position: relative;
+  z-index: 4;
+  background-color: $body-background;
+  display: inline-block;
+  width: 125px;
+  text-align: center;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+.logo__image {
+  width: 100px;
 }
 .image-overlay {
   position: relative;
@@ -1032,6 +1036,20 @@ legend {
   {% endif %}
   border-top: 3px solid $body-background;
 }
+
+.phone-number {
+  text-align: center;
+}
+.phone-number__link {
+  text-decoration: none;
+  color: #606060;
+  transition: color .25s;
+  font-size: 2em;
+  &:hover {
+    color: $accent-color;
+  }
+}
+
 .menus--featured {
   text-align: center;
   margin-bottom: 1em;
@@ -1695,6 +1713,10 @@ x:-o-prefocus, .lb-overlay img {
     text-align: left;
     padding: 1em 0;
   }
+  .section__main--hours {
+    width: 500px;
+    margin: 1em auto;
+  }
     .opening-day {
       clear: left;
       float: left;
@@ -1788,6 +1810,12 @@ x:-o-prefocus, .lb-overlay img {
   // home
   .home-header__title {
     height: 7%;
+  }
+  .logo {
+    width: 200px;
+  }
+  .logo__image {
+    width: 175px;
   }
   .image-header--top-left,
   .image-header--top-right,

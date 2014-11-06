@@ -1,6 +1,10 @@
 <div class="home-header home-header--medium-up">
   <div class="home-header__title">
-    <h1>Brewery</h1>
+    {% if restaurant.logo? %}
+      <div class="logo">
+        {{ restaurant.logo_url | image_tag:'class:logo__image' }}
+      </div>
+    {% endif %}
   </div>
   <div class="image-overlay image-header--top-left">
     <div class="overlay overlay-top-left"></div>
@@ -83,11 +87,31 @@
 <div class="clearer"></div>
 
 <div class="wrapper">
+  <div class="restaurant-name">
+    <header class="section__header">
+      <h2 class="section__title">{{ restaurant.name }}</h2>
+      {% if restaurant.slogan? %}
+        <div class="slogan">
+          {{ restaurant.slogan }}
+        </div>
+      {% endif %}
+    </header>
+  </div>
+  <div class="phone-number">
+    {% if restaurant.phone? %}
+      <a class="phone-number__link" href="tel:{{ restaurant.phone_uri }}">
+        <i class="icon-phone"></i> <span class="phone-number__label">{{ restaurant.phone }}</span>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<div class="wrapper">
   <section class="opening-hours">
     <header class="section__header">
       <h2 class="section__title">{{ "Horaires" | t }}</h2>
     </header>
-    <main class="section__main">
+    <main class="section__main section__main--hours">
       <dl class="opening-days">
       {% for day in opening_hours %}
         <dt class="opening-day">
