@@ -56,7 +56,7 @@ $image-header-bottom-right-background-color: {{ theme_settings.image-header-bott
 $home-featured-background-color: {{ theme_settings.home-featured-background-color }};
 $home-featured-color: {{ theme_settings.home-featured-color }};
 
-$menu-featured-background: {{ theme_settings.menu-featured-background }};
+$menu-featured-text-color: {{ theme_settings.menu-featured-text-color }};
 
 // Foods
 $food-separator-color: #f0f0f0;
@@ -592,7 +592,7 @@ body {
   p {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1.5em;
     color: white;
     transition: color .25s;
   }
@@ -854,8 +854,6 @@ legend {
   display: inline-block;
   width: 125px;
   text-align: center;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
 }
 .logo__image {
   width: 100px;
@@ -1155,10 +1153,20 @@ legend {
   }
 }
   .menu--featured {
-    .block-grid {
-      border: 3px solid $menu-featured-background;
-      border-radius: 1.5em;
+    .block-grid-food {
+      overflow: hidden;
+      background-image: url({{ 'menu-featured-background-image.png' | asset_url }});
       padding-top: 1.5em;
+      padding-left: 1em;
+      padding-right: 1em;
+      .food {
+        .food__title,
+        .food__summary,
+        .price__label,
+        .price__value {
+          color: $menu-featured-text-color;
+        }
+      }
     }
 
   }
@@ -1600,14 +1608,6 @@ x:-o-prefocus, .lb-overlay img {
   .button {
     padding: .225em 2em;
   }
-  .nav-button {
-    height: 75px;
-    p {
-    }
-  }
-  .main-nav__items {
-    bottom: 75px;
-  }
   .home-header__title {
     height: 50px;
   }
@@ -1781,8 +1781,9 @@ x:-o-prefocus, .lb-overlay img {
     width: 16.6666667%;
   }
   .menu {
-    .block-grid {
+    .block-grid-food {
       &>li {
+        padding: 0 1em;
         &:nth-of-type(odd) {
           clear: both;
         }

@@ -30,7 +30,7 @@
     </div>
   {% endif %}
   {% if menu.foods? %}
-    <ul class="block-grid">
+    <ul class="block-grid-food">
       {% for food in menu.foods %}
         {% assign_prices_to prices for food in menu %}
         {% include 'food' with food:food, menu:menu, description: true %}
