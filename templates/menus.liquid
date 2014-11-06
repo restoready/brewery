@@ -10,7 +10,10 @@
         {% for child in menu.children %}
           <li class="menu-child">
             <a href="{{ menu.url }}#menu-{{child.id}}" class="menu-child__link">
-              {{ child.main_image | custom_image_url: "300x300#" | image_tag: "class:menu-child__image" }}
+              <div class="menu-child-image-wrapper">
+                {{ child.main_image | custom_image_url: "300x300#" | image_tag: "class:menu-child__image" }}
+                <div class="menu-child-image-overlay"></div>
+              </div>
               <span class="menu-child__title">{{ child.name}}</span>
             </a>
           </li>
