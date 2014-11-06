@@ -50,6 +50,12 @@
           $(this).parents('.directions__footer').siblings('.directions__overlay').fadeOut('slow');
           $(this).fadeOut('slow');
         });
+        $('input, textarea').focusin(function(){
+          $('.nav-button').slideUp('fast');
+        });
+        $('input, textarea').focusout(function(){
+          $('.nav-button').slideDown('fast');
+        });
       });
     </script>
   </body>
