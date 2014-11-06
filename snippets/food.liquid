@@ -1,4 +1,4 @@
-<div class="food {% if food.featured_in_menu? %}food--featured{% endif %} {{food.auto_css_classes}}" id="food-{{food.id}}">
+<li class="food {% if food.featured_in_menu? %}food--featured{% endif %} {{food.auto_css_classes}}" id="food-{{food.id}}">
   {% if food.main_image? %}
     {{ food.main_image | custom_image_url:'150x150#' | image_tag:'class:food__image' }}
   {% endif %}
@@ -34,4 +34,4 @@
       </div>
     {% endif %}
   </div>
-</div>
+</li>

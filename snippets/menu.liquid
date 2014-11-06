@@ -11,6 +11,14 @@
         </div>
       {% endif %}
     </div>
+  {% else %}
+    {% if title == true %}
+      <div class="menu__header--no-image">
+        <h{{ menu.depth | plus: 1 }} class="menu__title">
+          {{ menu.name }}
+        </h{{ menu.depth | plus: 1 }}>
+      </div>
+    {% endif %}
   {% endif %}
   {% if menu.depth == 1 %}
     <div class="wrapper">
@@ -34,6 +42,7 @@
       {% include 'menu' with menu:child %}
     {% endfor %}
   {% endif %}
+  <div class="clearer"></div>
   {% if menu.depth == 1 %}
     <div class="back-to-menu">
       <a class="back-to-menu__link" href="#top">{{ "Retour au menu" | t }}</a>

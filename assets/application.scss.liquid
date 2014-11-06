@@ -1019,14 +1019,25 @@ legend {
 .menus--featured {
   text-align: center;
   margin-bottom: 1em;
+  .menu__title {
+    color: white;
+    font-size: 1em;
+    margin-bottom: .5em;
+  }
 }
 .foods--featured {
   overflow: hidden;
   text-align: center;
   margin-bottom: 1em;
+  .food__title {
+    color: white;
+    font-size: 1em;
+    margin-bottom: .5em;
+  }
 }
 .block-grid {
   margin-bottom: 0;
+  overflow: hidden;
 }
 .home-featured__image {
   @extend .auto;
@@ -1103,6 +1114,9 @@ legend {
 // Menu item
 .menu {
   padding-bottom: 1em;
+  .block-grid {
+    padding-bottom: 1.5em;
+  }
 }
   .menu--featured {
 
@@ -1119,9 +1133,16 @@ legend {
       }
     }
   }
+  .menu__header--no-image {
+    text-align: center;
+    .menu__title {
+      color: $accent-color;
+    }
+  }
     .menu__image {
       @extend .auto;
       display: block;
+      margin-bottom: 1em;
     }
     .menu__main-image-overlay {
       position: absolute;
@@ -1148,7 +1169,7 @@ legend {
     }
   .menu__description {
     font-size: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0 2em 0;
   }
 
 .menus__menu-link {
@@ -1211,17 +1232,20 @@ legend {
 
 // Food item
 .food {
-  //@include media;
+  @include media;
   padding: 0;
   margin-bottom: 2em;
 }
   .food__image {
+    @include media-aside;
+    margin-right: $gutter / 2;
+    vertical-align: middle;
   }
   .food__body {
-    //@include media-body;
+    @include media-body;
   }
     .food__title {
-      
+      font-size: 1.5em;
     }
     .food__summary {
       font-size: 1em;
@@ -1266,6 +1290,7 @@ legend {
     .back-to-menu__link {
       color: #727272;
       text-decoration: none;
+      transition: color .25s;
       &:hover, &:focus {
         color: #000;
       }
@@ -1606,15 +1631,6 @@ x:-o-prefocus, .lb-overlay img {
       }
     }
   }
-
-  .food {
-    width: 50%;
-    float: left;
-    height: 225px;
-  }
-  .food__body {
-    padding: 0 .5em;
-  }
   .menu-child {
     width: 25%;
   }
@@ -1654,7 +1670,7 @@ x:-o-prefocus, .lb-overlay img {
       }
     }
   }
-  
+
    .opening-hours {
     text-align: left;
     padding: 1em 0;
@@ -1713,6 +1729,27 @@ x:-o-prefocus, .lb-overlay img {
   }
   .menu-child {
     width: 16.6666667%;
+  }
+  .menu {
+    .block-grid {
+      &>li {
+        &:nth-of-type(odd) {
+          clear: both;
+        }
+      }
+    }
+  }
+  .food {
+    width: 50%;
+    float: left;
+    padding: 0 .5em;
+  }
+  .price__label {
+    float: none;
+  }
+  .price__value {
+    float: none;
+    margin-left: 1em;
   }
 }
 
