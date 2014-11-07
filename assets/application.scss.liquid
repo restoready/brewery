@@ -43,6 +43,8 @@ $body-color: {{ theme_settings.body-color }};
 $accent-color: {{ theme_settings.accent-color }};
 $nav-color: {{ theme_settings.nav-color }};
 $nav-background-color: {{ theme_settings.nav-background-color }};
+$price-label-color: {{ theme_settings.price-label-color }};
+$price-value-color: {{ theme_settings.price-value-color }};
 
 $image-header-informations-color: {{ theme_settings.image-header-informations-color}};
 $image-header-informations-color-button: {{ theme_settings.image-header-informations-color-button }};
@@ -616,7 +618,7 @@ body {
     display: none;
     position: fixed;
     z-index: 1;
-    height: 450px;
+    height: 300px;
     bottom: 50px;
     left: 0;
     right: 0;
@@ -633,7 +635,7 @@ body {
       width: 50%;
       float: left;
       text-align: center;
-      height: 89.7px;
+      height: 59.7px;
       margin-bottom: 0;
       border: 2px solid $nav-background-color;
       box-sizing: border-box;
@@ -1334,12 +1336,13 @@ legend {
     @include clearfix;
   }
   .price__label {
-    color: scale-color($body-color, $lightness: +25%);
+    color: $price-label-color;
     float: left;
   }
   .price__value {
     font-weight: 700;
     float: right;
+    color: $price-value-color;
   }
 
 // Back to menu

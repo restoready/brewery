@@ -38,6 +38,8 @@
     "nav-background-image": true,
     "nav-background-color": "#004358",
     "nav-color": "#004358",
+    "price-label-color": "#004358",
+    "price-value-color": "#004358",
 
     "image-header-top-left-text": "Retrouvez nos spécialités au travers de diverses menus et formules",
     "image-header-top-right-text": "Brewery vous propose de visitez la carte du restaurant",
@@ -95,6 +97,8 @@
     "nav-background-image": true,
     "nav-background-color": "#004358",
     "nav-color": "#004358",
+    "price-label-color": "#004358",
+    "price-value-color": "#004358",
 
     "image-header-top-left-text": "Retrouvez nos spécialités au travers de diverses menus et formules",
     "image-header-top-right-text": "Brewery vous propose de visitez la carte du restaurant",
