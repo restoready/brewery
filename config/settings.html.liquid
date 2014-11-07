@@ -38,10 +38,6 @@
             <input name="admin_theme_settings[accent-color]" id="accent-color" value="{{ theme_settings.accent-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="nav-color">Couleur texte navigation</label>
-            <input name="admin_theme_settings[nav-color]" id="nav-color" value="{{ theme_settings.nav-color }}" type="text" class="minicolors">
-          </div>
-          <div class="columns medium-4 large-3">
             <label for="home-featured-background-color">Couleur fond menu et plat en avant sur l'accueil</label>
             <input name="admin_theme_settings[home-featured-background-color]" id="home-featured-background-color" value="{{ theme_settings.home-featured-background-color }}" type="text" class="minicolors">
           </div>
@@ -493,7 +489,7 @@
 
             <div class="large-11">
               <div id="plupload-menu-featured-background-image" class="input-file input-file-asset">
-                <input name="admin_theme_settings[assets][menu-featured-background-image.jpg]" type="file"/>
+                <input name="admin_theme_settings[assets][menu-featured-background-image.png]" type="file"/>
               </div>
             </div>
 
@@ -507,6 +503,45 @@
           <div class="columns medium-4 large-3 end">
             <label for="menu-featured-text-color">Couleur du texte</label>
             <input name="admin_theme_settings[menu-featured-text-color]" id="menu-featured-text-color" value="{{ theme_settings.menu-featured-text-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Navigation</legend>
+        <div class="row">
+          <div class="medium-4 large-3 columns">
+            <div class="large-11">
+              <label for="">Navigation image</label>
+            </div>
+            <div class="large-11">
+              {% if theme_settings.nav-background-image %}
+              <input class="icheck-me" name="admin_theme_settings[nav-background-image]" id="nav-background-image" type="checkbox" value="{{ theme_settings.nav-background-image }}" data-skin='black-green' checked/>
+              {% else %}
+              <input class="icheck-me" name="admin_theme_settings[nav-background-image]" id="nav-background-image" type="checkbox" value="{{ theme_settings.nav-background-image }}" data-skin='black-green' />
+              {% endif %}
+              <label for="nav-background-image">Afficher l'image</label>
+            </div>
+
+            <div class="large-11">
+              <div id="plupload-nav-background-image" class="input-file input-file-asset">
+                <input name="admin_theme_settings[assets][nav-background-image.png]" type="file"/>
+              </div>
+            </div>
+
+            <div class="large-11 preview">
+              <div class="filelist">
+                {{ 'nav-background-image.png' | asset_url | image_tag }}
+              </div>
+            </div>
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="nav-background-color">Couleur du fond</label>
+            <input name="admin_theme_settings[nav-background-color]" id="nav-background-color" value="{{ theme_settings.nav-background-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="nav-color">Couleur texte navigation</label>
+            <input name="admin_theme_settings[nav-color]" id="nav-color" value="{{ theme_settings.nav-color }}" type="text" class="minicolors">
           </div>
         </div>
       </fieldset>

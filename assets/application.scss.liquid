@@ -42,6 +42,8 @@ $body-background: {{ theme_settings.body-background }};
 $body-color: {{ theme_settings.body-color }};
 $accent-color: {{ theme_settings.accent-color }};
 $nav-color: {{ theme_settings.nav-color }};
+$nav-background-color: {{ theme_settings.nav-background-color }};
+
 $image-header-informations-color: {{ theme_settings.image-header-informations-color}};
 $image-header-informations-color-button: {{ theme_settings.image-header-informations-color-button }};
 $image-header-informations-color-button-text-hover: {{ theme_settings.image-header-informations-color-button-text-hover }};
@@ -586,7 +588,10 @@ body {
   left: 0;
   right: 0;
   z-index: 2;
-  background-color: $accent-color;
+  background-color: $nav-background-color;
+  {% if theme_settings.nav-background-image %}
+    background-image: url({{ 'nav-background-image.png' | asset_url }});
+  {% endif %}
   height: 50px;
   text-align: center;
   p {
@@ -595,6 +600,10 @@ body {
     font-size: 1.5em;
     color: white;
     transition: color .25s;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    @include vertical-align;
   }
   &:hover p, &:focus p {
     color: $body-background;
@@ -611,10 +620,11 @@ body {
     bottom: 50px;
     left: 0;
     right: 0;
-    background-color: $accent-color;
+    background-color: $nav-background-color;
+    {% if theme_settings.nav-background-image %}
+      background-image: url({{ 'nav-background-image.png' | asset_url }});
+    {% endif %}
     margin-bottom: 0;
-    border-left: 4px solid $accent-color;
-    border-top: 4px solid $accent-color;
     overflow-y: auto;
     box-sizing: border-box;
   }
@@ -625,9 +635,11 @@ body {
       text-align: center;
       height: 89.7px;
       margin-bottom: 0;
-      border-right: 4px solid $accent-color;
-      border-bottom: 4px solid $accent-color;
+      border: 2px solid $nav-background-color;
       box-sizing: border-box;
+      &:last-child {
+        border-right: 4px solid $nav-background-color;
+      }
     }
       .main-nav__link {
         position: absolute;
@@ -638,7 +650,7 @@ body {
         background-color: $body-background;
         transition: background-color .25s;
         &:hover, &:focus {
-          background-color: $accent-color;
+          background-color: $nav-background-color;
           .main-nav__title {
             color: $body-background;
           }
@@ -651,7 +663,7 @@ body {
           @include vertical-align;
           text-transform: uppercase;
           font-weight: bold;
-          color: $accent-color;
+          color: $nav-color;
         }
 .main-content {
   margin-bottom: 1em;
@@ -1155,7 +1167,9 @@ legend {
   .menu--featured {
     .block-grid-food {
       overflow: hidden;
-      background-image: url({{ 'menu-featured-background-image.png' | asset_url }});
+      {% if theme_settings.menu-featured-background-image %}
+        background-image: url({{ 'menu-featured-background-image.png' | asset_url }});
+      {% endif %}
       padding-top: 1.5em;
       padding-left: 1em;
       padding-right: 1em;
