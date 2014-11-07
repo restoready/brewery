@@ -38,24 +38,31 @@
     <script type="text/javascript">
       $( function() {
         FastClick.attach(document.body);
+
         $('.image-overlay').click( function(){
           $('.active').removeClass('active');
           $(this).addClass('active');
         });
+
         $('.nav-button').click( function(){
           $('.main-nav__items').slideToggle("fast");
         });
+
         $('.button-see-location').click(function (e) {
           e.preventDefault();
           $(this).parents('.directions__footer').siblings('.directions__overlay').fadeOut('slow');
           $(this).fadeOut('slow');
         });
-        $('input, textarea').focusin(function(){
-          $('.nav-button').slideUp('fast');
-        });
-        $('input, textarea').focusout(function(){
-          $('.nav-button').slideDown('fast');
-        });
+
+        var height = $(window).height();
+        if (parseInt(height) < 600) {
+          $('input, textarea').focusin(function(){
+            $('.nav-button').slideUp('fast');
+          });
+          $('input, textarea').focusout(function(){
+            $('.nav-button').slideDown('fast');
+          });
+        }
       });
     </script>
   </body>
