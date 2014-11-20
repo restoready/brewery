@@ -7,7 +7,11 @@
           <li class="menu-child">
             <a href="#menu-{{child.id}}" class="menu-child__link">
               <div class="menu-child-image-wrapper">
-                {{ child.main_image | custom_image_url: "300x300#" | image_tag: "class:menu-child__image" }}
+                {% if child.main_image? %}
+                  {{ child.main_image | custom_image_url: "300x300#" | image_tag: "class:menu-child__image" }}
+                {% else %}
+                  {{ 'fallback-image.gif' | asset_url | image_tag: 'alt:menus', 'class:menu-child__fallback-image', 'width:300' }}
+                {% endif %}
                 <div class="menu-child-image-overlay"></div>
               </div>
               <span class="menu-child__title">{{ child.name}}</span>
