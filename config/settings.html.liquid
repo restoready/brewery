@@ -19,6 +19,10 @@
   <label for="tab5">
     Images
   </label>
+  <input class="tab-head" id="tab6" name="tab" type="radio">
+  <label for="tab6">
+    Titres
+  </label>
 
   <div class="tab-body-wrapper">
     <div class="tab-body" id="tab-body-1">
@@ -156,7 +160,7 @@
 
     <div class="tab-body" id="tab-body-4">
       <fieldset>
-        <legend>Couleurs</legend>
+        <legend>Général</legend>
         <div class="row">
           <div class="columns medium-4 large-3">
             <label for="image-header-informations-color">Textes (description + bouton)</label>
@@ -171,8 +175,10 @@
             <input name="admin_theme_settings[image-header-informations-color-button-text-hover]" id="image-header-informations-color-button-text-hover" value="{{ theme_settings.image-header-informations-color-button-text-hover }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-informations-button-text">Texte bouton</label>
-            <input type="text" id="image-header-informations-button-text" name="admin_theme_settings[image-header-informations-button-text]" value="{{ theme_settings.image-header-informations-button-text }}">
+            <label for="image-header-informations-button-text-fr">Texte bouton (fr)</label>
+            <input type="text" id="image-header-informations-button-text-fr" name="admin_theme_settings[image-header-informations-button-text-fr]" value="{{ theme_settings.image-header-informations-button-text-fr }}">
+            <label for="image-header-informations-button-text-en">Texte bouton (en)</label>
+            <input type="text" id="image-header-informations-button-text-en" name="admin_theme_settings[image-header-informations-button-text-en]" value="{{ theme_settings.image-header-informations-button-text-en }}">
           </div>
         </div>
       </fieldset>
@@ -209,8 +215,10 @@
             <input name="admin_theme_settings[image-header-top-left-background-color]" id="image-header-top-left-background-color" value="{{ theme_settings.image-header-top-left-background-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-top-left-text">Texte description</label>
-            <input type="text" id="image-header-top-left-text" name="admin_theme_settings[image-header-top-left-text]" value="{{ theme_settings.image-header-top-left-text }}">
+            <label for="image-header-top-left-text-fr">Texte description (fr)</label>
+            <input type="text" id="image-header-top-left-text-fr" name="admin_theme_settings[image-header-top-left-text-fr]" value="{{ theme_settings.image-header-top-left-text-fr }}">
+            <label for="image-header-top-left-text-en">Texte description (en)</label>
+            <input type="text" id="image-header-top-left-text-en" name="admin_theme_settings[image-header-top-left-text-en]" value="{{ theme_settings.image-header-top-left-text-en }}">
           </div>
           <div class="columns medium-4 large-3">
             <label for="image-header-top-left-link">Lien bouton</label>
@@ -252,8 +260,10 @@
             <input name="admin_theme_settings[image-header-top-right-background-color]" id="image-header-top-right-background-color" value="{{ theme_settings.image-header-top-right-background-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-top-right-text">Texte description</label>
-            <input type="text" id="image-header-top-right-text" name="admin_theme_settings[image-header-top-right-text]" value="{{ theme_settings.image-header-top-right-text }}">
+            <label for="image-header-top-right-text-fr">Texte description (fr)</label>
+            <input type="text" id="image-header-top-right-text-fr" name="admin_theme_settings[image-header-top-right-text-fr]" value="{{ theme_settings.image-header-top-right-text-fr }}">
+            <label for="image-header-top-right-text-en">Texte description (en)</label>
+            <input type="text" id="image-header-top-right-text-en" name="admin_theme_settings[image-header-top-right-text-en]" value="{{ theme_settings.image-header-top-right-text-en }}">
           </div>
           <div class="columns medium-4 large-3">
             <label for="image-header-top-right-link">Lien bouton</label>
@@ -295,8 +305,10 @@
             <input name="admin_theme_settings[image-header-middle-left-background-color]" id="image-header-middle-left-background-color" value="{{ theme_settings.image-header-middle-left-background-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-middle-left-text">Texte description</label>
-            <input type="text" id="image-header-middle-left-text" name="admin_theme_settings[image-header-middle-left-text]" value="{{ theme_settings.image-header-middle-left-text }}">
+            <label for="image-header-middle-left-text-fr">Texte description (fr)</label>
+            <input type="text" id="image-header-middle-left-text-fr" name="admin_theme_settings[image-header-middle-left-text-fr]" value="{{ theme_settings.image-header-middle-left-text-fr }}">
+            <label for="image-header-middle-left-text-en">Texte description (en)</label>
+            <input type="text" id="image-header-middle-left-text-en" name="admin_theme_settings[image-header-middle-left-text-en]" value="{{ theme_settings.image-header-middle-left-text-en }}">
           </div>
           <div class="columns medium-4 large-3">
             <label for="image-header-middle-left-link">Lien bouton</label>
@@ -338,8 +350,10 @@
             <input name="admin_theme_settings[image-header-middle-middle-background-color]" id="image-header-middle-middle-background-color" value="{{ theme_settings.image-header-middle-middle-background-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-middle-middle-text">Texte description</label>
-            <input type="text" id="image-header-middle-middle-text" name="admin_theme_settings[image-header-middle-middle-text]" value="{{ theme_settings.image-header-middle-middle-text }}">
+            <label for="image-header-middle-middle-text-fr">Texte description (fr)</label>
+            <input type="text" id="image-header-middle-middle-text-fr" name="admin_theme_settings[image-header-middle-middle-text-fr]" value="{{ theme_settings.image-header-middle-middle-text-fr }}">
+            <label for="image-header-middle-middle-text-en">Texte description (en)</label>
+            <input type="text" id="image-header-middle-middle-text-en" name="admin_theme_settings[image-header-middle-middle-text-en]" value="{{ theme_settings.image-header-middle-middle-text-en }}">
           </div>
           <div class="columns medium-4 large-3">
             <label for="image-header-middle-middle-link">Lien bouton</label>
@@ -381,8 +395,10 @@
             <input name="admin_theme_settings[image-header-middle-right-background-color]" id="image-header-middle-right-background-color" value="{{ theme_settings.image-header-middle-right-background-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-middle-right-text">Texte description</label>
-            <input type="text" id="image-header-middle-right-text" name="admin_theme_settings[image-header-middle-right-text]" value="{{ theme_settings.image-header-middle-right-text }}">
+            <label for="image-header-middle-right-text-fr">Texte description (fr)</label>
+            <input type="text" id="image-header-middle-right-text-fr" name="admin_theme_settings[image-header-middle-right-text-fr]" value="{{ theme_settings.image-header-middle-right-text-fr }}">
+            <label for="image-header-middle-right-text-en">Texte description (en)</label>
+            <input type="text" id="image-header-middle-right-text-en" name="admin_theme_settings[image-header-middle-right-text-en]" value="{{ theme_settings.image-header-middle-right-text-en }}">
           </div>
           <div class="columns medium-4 large-3">
             <label for="image-header-middle-right-link">Lien bouton</label>
@@ -424,8 +440,10 @@
             <input name="admin_theme_settings[image-header-bottom-left-background-color]" id="image-header-bottom-left-background-color" value="{{ theme_settings.image-header-bottom-left-background-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-bottom-left-text">Texte description</label>
-            <input type="text" id="image-header-bottom-left-text" name="admin_theme_settings[image-header-bottom-left-text]" value="{{ theme_settings.image-header-bottom-left-text }}">
+            <label for="image-header-bottom-left-text-fr">Texte description (fr)</label>
+            <input type="text" id="image-header-bottom-left-text-fr" name="admin_theme_settings[image-header-bottom-left-text-fr]" value="{{ theme_settings.image-header-bottom-left-text-fr }}">
+            <label for="image-header-bottom-left-text-en">Texte description (en)</label>
+            <input type="text" id="image-header-bottom-left-text-en" name="admin_theme_settings[image-header-bottom-left-text-en]" value="{{ theme_settings.image-header-bottom-left-text-en }}">
           </div>
           <div class="columns medium-4 large-3">
             <label for="image-header-bottom-left-link">Lien bouton</label>
@@ -467,8 +485,10 @@
             <input name="admin_theme_settings[image-header-bottom-right-background-color]" id="image-header-bottom-right-background-color" value="{{ theme_settings.image-header-bottom-right-background-color }}" type="text" class="minicolors">
           </div>
           <div class="columns medium-4 large-3">
-            <label for="image-header-bottom-right-text">Texte description</label>
-            <input type="text" id="image-header-bottom-right-text" name="admin_theme_settings[image-header-bottom-right-text]" value="{{ theme_settings.image-header-bottom-right-text }}">
+            <label for="image-header-bottom-right-text-fr">Texte description (fr)</label>
+            <input type="text" id="image-header-bottom-right-text-fr" name="admin_theme_settings[image-header-bottom-right-text-fr]" value="{{ theme_settings.image-header-bottom-right-text-fr }}">
+            <label for="image-header-bottom-right-text-en">Texte description (en)</label>
+            <input type="text" id="image-header-bottom-right-text-en" name="admin_theme_settings[image-header-bottom-right-text-en]" value="{{ theme_settings.image-header-bottom-right-text-en }}">
           </div>
           <div class="columns medium-4 large-3">
             <label for="image-header-bottom-right-link">Lien bouton</label>
@@ -550,6 +570,31 @@
           <div class="columns medium-4 large-3 end">
             <label for="nav-color">Couleur texte navigation</label>
             <input name="admin_theme_settings[nav-color]" id="nav-color" value="{{ theme_settings.nav-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="tab-body" id="tab-body-6">
+      <fieldset>
+        <legend>Page d'accueil</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+
+            <label for="home-menus-featured-text_fr">Titre menus en avant (fr)</label>
+            <input name="admin_theme_settings[home_menus_featured_text_fr]" id="home_menus_featured_text_fr" value="{{ theme_settings.home_menus_featured_text_fr }}" type="text">
+
+            <label for="home-menus-featured-text_en">Titre menus en avant (en)</label>
+            <input name="admin_theme_settings[home_menus_featured_text_en]" id="home_menus_featured_text_en" value="{{ theme_settings.home_menus_featured_text_en }}" type="text">
+
+          </div>
+          <div class="columns medium-4 large-3 end">
+
+            <label for="home-foods-featured-text_fr">Titre plats en avant (fr)</label>
+            <input name="admin_theme_settings[home_foods_featured_text_fr]" id="home_foods_featured_text_fr" value="{{ theme_settings.home_foods_featured_text_fr }}" type="text">
+
+             <label for="home-foods-featured-text_en">Titre plats en avant (en)</label>
+            <input name="admin_theme_settings[home_foods_featured_text_en]" id="home_foods_featured_text_en" value="{{ theme_settings.home_foods_featured_text_en }}" type="text">
+
           </div>
         </div>
       </fieldset>
