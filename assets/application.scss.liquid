@@ -129,7 +129,12 @@ $bodyFontStack: {{ theme_settings.body-font }};
   *zoom: 1;
 }
 @mixin clearfix() {
-  @extend .clearfix;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  *zoom: 1;
 }
 
 @mixin box-shadow($shadow) {
@@ -577,7 +582,12 @@ body {
   background-color: $body-background;
 }
 .page {
-  @extend .clearfix;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  *zoom: 1;
 }
 .clearer {
   clear: both;
@@ -727,7 +737,11 @@ body {
           font-size: .7em;
         }
           .social__label {
-            @extend .hide-text;
+            height: 1px;
+            width: 1px;
+            position: absolute;
+            overflow: hidden;
+            top: -10px;
           }
 
   .footer__legal {
@@ -1089,7 +1103,8 @@ legend {
   overflow: hidden;
 }
 .home-featured__image {
-  @extend .auto;
+  max-width: 100%;
+  height: auto;
   height: 200px;
   background-color: $home-featured-background-color;
   border-bottom: 6px solid $body-background;
@@ -1107,7 +1122,12 @@ legend {
   padding: 1em 0;
 }
   .opening-days {
-    @extend .clearfix;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    *zoom: 1;
     margin-bottom: 1em;
   }
     .opening-day {
@@ -1143,7 +1163,8 @@ legend {
       left: 0; right: 0; bottom: 2em;
     }
     .map__image {
-      @extend .auto;
+      max-width: 100%;
+      height: auto;
       width: 100%;
     }
   .address {
@@ -1205,7 +1226,8 @@ legend {
     }
   }
     .menu__image {
-      @extend .auto;
+      max-width: 100%;
+      height: auto;
       display: block;
       margin-bottom: 1em;
     }
@@ -1394,7 +1416,8 @@ legend {
   }
     .gallery__img {
       img {
-        @extend .auto;
+        max-width: 100%;
+        height: auto;
       }
     }
       .photo__link {
