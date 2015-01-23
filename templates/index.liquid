@@ -181,7 +181,7 @@
     <header class="section__header">
       <h2 class="section__title">{{ "Horaires" | t }}</h2>
     </header>
-    <main class="section__main section__main--hours">
+    <div class="section__main section__main--hours">
       <dl class="opening-days">
       {% for day in opening_hours %}
         <dt class="opening-day">
@@ -197,7 +197,7 @@
         <p>{{ restaurant.opening_hours_information }}</p>
       </div>
     {% endif %}
-    </main>
+    </div>
   </section>
 </div>
 
@@ -206,7 +206,7 @@
     <header class="section__header">
       <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_menus_featured_text_fr | t }}{% else %}{{ theme_settings.home_menus_featured_text_en | t }}{% endif %}</h2>
     </header>
-    <main class="section__main">
+    <div class="section__main">
       <ul class="block-grid">
         {% for menu in home_menus %}
             <li class="home-featured__image image-overlay {% if home_menus.size >= 2 %}home-featured-two{% endif %} {% if home_menus.size >= 3 %}home-featured-three{% endif %} {% if home_menus.size >= 4 %}home-featured-four{% endif %} {% if home_menus.size >= 6 %}home-featured-six{% endif %}" {% if menu.main_image? %} style="background-image:url('{{ menu.main_image | custom_image_url: "1500x400#" }}');background-size: cover;background-position: center center;" {% endif %}>
@@ -227,7 +227,7 @@
             </li>
         {% endfor %}
       </ul>
-    </main>
+    </div>
   </section>
 {% endif %}
 {% if home_foods.size > 0 %}
@@ -235,7 +235,7 @@
     <header class="section__header">
         <h2 class="section__title">{% if current_locale == 'fr' %}{{ theme_settings.home_foods_featured_text_fr | t }}{% else %}{{ theme_settings.home_foods_featured_text_en | t }}{% endif %}</h2>
     </header>
-    <main class="section__main">
+    <div class="section__main">
       <ul class="block-grid">
         {% for food in home_foods %}
           <li class="home-featured__image image-overlay {% if home_foods.size >= 2 %}home-featured-two{% endif %} {% if home_foods.size >= 3 %}home-featured-three{% endif %} {% if home_foods.size >= 4 %}home-featured-four{% endif %} {% if home_foods.size >= 6 %}home-featured-six{% endif %}" {% if food.main_image? %} style="background-image:url('{{ food.main_image | custom_image_url: "1500x400#" }}');background-size:cover;background-position: center center;" {% endif %}>
@@ -250,7 +250,7 @@
           </li>
         {% endfor %}
       </ul>
-    </main>
+    </div>
   </section>
 {% endif %}
 <div class="clearer"></div>
@@ -266,7 +266,7 @@
   <header class="section__header">
     <h2 class="section__title">{{ "Localisation" | t }}</h2>
   </header>
-  <main class="section__main">
+  <div class="section__main">
     {% if theme_settings.google_map_type != "" %}
       <div class="map">
         {% if theme_settings.google_map_type == "embed" %}
@@ -297,5 +297,5 @@
       </p>
     </div>
     {% endif %}
-  </main>
+  </div>
 </section>
