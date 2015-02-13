@@ -35,9 +35,11 @@
 
     {{ 'jquery-2.1.1.min.js' | javascript_tag }}
     {{ 'fastclick.js' | javascript_tag }}
+    {{ 'venobox.min.js' | javascript_tag }}
     <script type="text/javascript">
       $( function() {
         FastClick.attach(document.body);
+        $('.venobox').venobox();
 
         $('.image-overlay').click( function(){
           $('.active').removeClass('active');
