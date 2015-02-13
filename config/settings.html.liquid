@@ -63,6 +63,59 @@
           </div>
         </div>
       </fieldset>
+      <fieldset>
+        <legend>Tags</legend>
+        <div class="row">
+          <div class="columns medium-4 large-3">
+            <label for="tag-vegan-background-color">Végétarien : fond</label>
+            <input name="admin_theme_settings[tag-vegan-background-color]" id="tag-vegan-background-color" value="{{ theme_settings.tag-vegan-background-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-vegan-font-color">Végétarien : texte</label>
+            <input name="admin_theme_settings[tag-vegan-font-color]" id="tag-vegan-font-color" value="{{ theme_settings.tag-vegan-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-new-background-color">Nouveauté : fond</label>
+            <input name="admin_theme_settings[tag-new-background-color]" id="tag-new-background-color" value="{{ theme_settings.tag-new-background-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-new-font-color">Nouveauté : texte</label>
+            <input name="admin_theme_settings[tag-new-font-color]" id="tag-new-font-color" value="{{ theme_settings.tag-new-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-meat-background-color">Sans-viandes : fond</label>
+            <input name="admin_theme_settings[tag-no-meat-background-color]" id="tag-no-meat-background-color" value="{{ theme_settings.tag-no-meat-background-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-meat-font-color">Sans-viandes : texte</label>
+            <input name="admin_theme_settings[tag-no-meat-font-color]" id="tag-no-meat-font-color" value="{{ theme_settings.tag-no-meat-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-pork-background-color">Sans-porc : fond</label>
+            <input name="admin_theme_settings[tag-no-pork-background-color]" id="tag-no-pork-background-color" value="{{ theme_settings.tag-no-pork-background-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-no-pork-font-color">Sans-porc : texte</label>
+            <input name="admin_theme_settings[tag-no-pork-font-color]" id="tag-no-pork-font-color" value="{{ theme_settings.tag-no-pork-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-alcohol-free-background-color">Sans-alcool : fond</label>
+            <input name="admin_theme_settings[tag-alcohol-free-background-color]" id="tag-alcohol-free-background-color" value="{{ theme_settings.tag-alcohol-free-background-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="tag-alcohol-free-font-color">Sans-alcool : texte</label>
+            <input name="admin_theme_settings[tag-alcohol-free-font-color]" id="tag-alcohol-free-font-color" value="{{ theme_settings.tag-alcohol-free-font-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3">
+            <label for="tag-daily-food-background-color">Suggestion du jour : fond</label>
+            <input name="admin_theme_settings[tag-daily-food-background-color]" id="tag-daily-food-background-color" value="{{ theme_settings.tag-daily-food-background-color }}" type="text" class="minicolors">
+          </div>
+          <div class="columns medium-4 large-3 end">
+            <label for="tag-daily-food-font-color">Suggestion du jour : texte</label>
+            <input name="admin_theme_settings[tag-daily-food-font-color]" id="tag-daily-food-font-color" value="{{ theme_settings.tag-daily-food-font-color }}" type="text" class="minicolors">
+          </div>
+        </div>
+      </fieldset>
     </div>
 
     <div class="tab-body" id="tab-body-2">
@@ -94,7 +147,7 @@
       <fieldset>
         <legend>Communication</legend>
         <div class="columns">
-            <input class="icheck-me" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" {% if theme_settings.footer_display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
+            <input class="icheck-me boolean-icheck" name="admin_theme_settings[footer_display_newsletter]" id="footer_display_newsletter" type="checkbox" value="{{ theme_settings.footer_display_newsletter }}" {% if theme_settings.footer_display_newsletter %}checked{% endif %} data-skin='black-green' checked/>
           <label style="margin-right:.5em;" for="footer_display_newsletter">Afficher la newsletter</label>
         </div>
       </fieldset>
@@ -102,11 +155,11 @@
       <fieldset>
         <legend>Carte Google</legend>
         <div class="columns">
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_none" type="radio" value="" data-skin='black-green' {% if theme_settings.google_map_type == "" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_none">Ne pas afficher la carte</label>
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_image" type="radio" value="image" data-skin='black-green' {% if theme_settings.google_map_type == "image" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_image">Afficher la carte sous forme d'image</label>
-          <input class="icheck-me" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
+          <input class="icheck-me boolean-icheck" name="admin_theme_settings[google_map_type]" id="radio_google_map_embed" type="radio" value="embed" data-skin='black-green' {% if theme_settings.google_map_type == "embed" %}checked{% endif %}/>
           <label style="margin-right:.5em;" for="radio_google_map_embed">Afficher la carte interactive</label>
         </div>
       </fieldset>
@@ -127,7 +180,7 @@
         <div class="columns large-6">
           <div class="row">
             <div class="columns">
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_google_business_view_embed]" id="display_google_business_view_embed" type="checkbox" value="{{ theme_settings.display_google_business_view_embed }}" data-skin='black-green' {% if theme_settings.display_google_business_view_embed %}checked{% endif %}/>
             <label style="margin-right:.5em;" for="display_google_business_view_embed">Afficher la visite virtuelle</label>
             </div>
           </div>
@@ -143,7 +196,7 @@
         <div class="columns large-6">
           <div class="row">
             <div class="columns">
-              <input class="icheck-me" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[display_google_business_view_url]" id="display_google_business_view_url" type="checkbox" value="{{ theme_settings.display_google_business_view_url }}" data-skin='black-green' {% if theme_settings.display_google_business_view_url %}checked{% endif %}/>
               <label style="margin-right:.5em;" for="display_google_business_view_url">Afficher le lien</label>
             </div>
           </div>
@@ -191,9 +244,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.image-header-top-left %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-top-left]" id="image-header-top-left" type="checkbox" value="{{ theme_settings.image-header-top-left }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-top-left]" id="image-header-top-left" type="checkbox" value="{{ theme_settings.image-header-top-left }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-top-left]" id="image-header-top-left" type="checkbox" value="{{ theme_settings.image-header-top-left }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-top-left]" id="image-header-top-left" type="checkbox" value="{{ theme_settings.image-header-top-left }}" data-skin='black-green' />
               {% endif %}
               <label for="image-header-top-left">Afficher l'image</label>
             </div>
@@ -236,9 +289,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.image-header-top-right %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-top-right]" id="image-header-top-right" type="checkbox" value="{{ theme_settings.image-header-top-right }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-top-right]" id="image-header-top-right" type="checkbox" value="{{ theme_settings.image-header-top-right }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-top-right]" id="image-header-top-right" type="checkbox" value="{{ theme_settings.image-header-top-right }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-top-right]" id="image-header-top-right" type="checkbox" value="{{ theme_settings.image-header-top-right }}" data-skin='black-green' />
               {% endif %}
               <label for="image-header-top-right">Afficher l'image</label>
             </div>
@@ -281,9 +334,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.image-header-middle-left %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-middle-left]" id="image-header-middle-left" type="checkbox" value="{{ theme_settings.image-header-middle-left }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-middle-left]" id="image-header-middle-left" type="checkbox" value="{{ theme_settings.image-header-middle-left }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-middle-left]" id="image-header-middle-left" type="checkbox" value="{{ theme_settings.image-header-middle-left }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-middle-left]" id="image-header-middle-left" type="checkbox" value="{{ theme_settings.image-header-middle-left }}" data-skin='black-green' />
               {% endif %}
               <label for="image-header-middle-left">Afficher l'image</label>
             </div>
@@ -326,9 +379,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.image-header-middle-middle %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-middle-middle]" id="image-header-middle-middle" type="checkbox" value="{{ theme_settings.image-header-middle-middle }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-middle-middle]" id="image-header-middle-middle" type="checkbox" value="{{ theme_settings.image-header-middle-middle }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-middle-middle]" id="image-header-middle-middle" type="checkbox" value="{{ theme_settings.image-header-middle-middle }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-middle-middle]" id="image-header-middle-middle" type="checkbox" value="{{ theme_settings.image-header-middle-middle }}" data-skin='black-green' />
               {% endif %}
               <label for="image-header-middle-middle">Afficher l'image</label>
             </div>
@@ -371,9 +424,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.image-header-middle-right %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-middle-right]" id="image-header-middle-right" type="checkbox" value="{{ theme_settings.image-header-middle-right }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-middle-right]" id="image-header-middle-right" type="checkbox" value="{{ theme_settings.image-header-middle-right }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-middle-right]" id="image-header-middle-right" type="checkbox" value="{{ theme_settings.image-header-middle-right }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-middle-right]" id="image-header-middle-right" type="checkbox" value="{{ theme_settings.image-header-middle-right }}" data-skin='black-green' />
               {% endif %}
               <label for="image-header-middle-right">Afficher l'image</label>
             </div>
@@ -416,9 +469,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.image-header-bottom-left %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-bottom-left]" id="image-header-bottom-left" type="checkbox" value="{{ theme_settings.image-header-bottom-left }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-bottom-left]" id="image-header-bottom-left" type="checkbox" value="{{ theme_settings.image-header-bottom-left }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-bottom-left]" id="image-header-bottom-left" type="checkbox" value="{{ theme_settings.image-header-bottom-left }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-bottom-left]" id="image-header-bottom-left" type="checkbox" value="{{ theme_settings.image-header-bottom-left }}" data-skin='black-green' />
               {% endif %}
               <label for="image-header-bottom-left">Afficher l'image</label>
             </div>
@@ -461,9 +514,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.image-header-bottom-right %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-bottom-right]" id="image-header-bottom-right" type="checkbox" value="{{ theme_settings.image-header-bottom-right }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-bottom-right]" id="image-header-bottom-right" type="checkbox" value="{{ theme_settings.image-header-bottom-right }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[image-header-bottom-right]" id="image-header-bottom-right" type="checkbox" value="{{ theme_settings.image-header-bottom-right }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[image-header-bottom-right]" id="image-header-bottom-right" type="checkbox" value="{{ theme_settings.image-header-bottom-right }}" data-skin='black-green' />
               {% endif %}
               <label for="image-header-bottom-left">Afficher l'image</label>
             </div>
@@ -508,9 +561,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.menu-featured-background-image %}
-              <input class="icheck-me" name="admin_theme_settings[menu-featured-background-image]" id="menu-featured-background-image" type="checkbox" value="{{ theme_settings.menu-featured-background-image }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[menu-featured-background-image]" id="menu-featured-background-image" type="checkbox" value="{{ theme_settings.menu-featured-background-image }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[menu-featured-background-image]" id="menu-featured-background-image" type="checkbox" value="{{ theme_settings.menu-featured-background-image }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[menu-featured-background-image]" id="menu-featured-background-image" type="checkbox" value="{{ theme_settings.menu-featured-background-image }}" data-skin='black-green' />
               {% endif %}
               <label for="menu-featured-background-image">Afficher l'image</label>
             </div>
@@ -544,9 +597,9 @@
             </div>
             <div class="large-11">
               {% if theme_settings.nav-background-image %}
-              <input class="icheck-me" name="admin_theme_settings[nav-background-image]" id="nav-background-image" type="checkbox" value="{{ theme_settings.nav-background-image }}" data-skin='black-green' checked/>
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[nav-background-image]" id="nav-background-image" type="checkbox" value="{{ theme_settings.nav-background-image }}" data-skin='black-green' checked/>
               {% else %}
-              <input class="icheck-me" name="admin_theme_settings[nav-background-image]" id="nav-background-image" type="checkbox" value="{{ theme_settings.nav-background-image }}" data-skin='black-green' />
+              <input class="icheck-me boolean-icheck" name="admin_theme_settings[nav-background-image]" id="nav-background-image" type="checkbox" value="{{ theme_settings.nav-background-image }}" data-skin='black-green' />
               {% endif %}
               <label for="nav-background-image">Afficher l'image</label>
             </div>
