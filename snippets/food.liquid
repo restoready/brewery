@@ -24,12 +24,18 @@
     {% if prices.size > 0 %}
       <div class="food__prices">
         <ul class="prices">
-          {% for price in prices %}
-          <li class="price">
-            <span class="price__label">{{ price.title }}</span>
-            <span class="price__value">{{ price.amount | money }}</span>
-          </li>
-          {% endfor %}
+          {% if prices.size > 1 or prices.first.title %}
+            {% for price in prices %}
+              <li class="price">
+                <span class="price__label">{{ price.title }}</span>
+                <span class="price__value price__value--margin">{{ price.amount | money }}</span>
+              </li>
+            {% endfor %}
+          {% else %}
+            <li class="price">
+              <span class="price__value">{{ prices.first.amount | money }}</span>
+            </li>
+          {% endif %}
         </ul>
       </div>
     {% endif %}
