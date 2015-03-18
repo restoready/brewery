@@ -1282,11 +1282,12 @@ legend {
 // Menu children
 .menu-children {
   overflow: hidden;
-}
-.menu-children {
   &>li {
     border-right: 3px solid $body-background;
     border-left: 3px solid $body-background;
+    &:nth-of-type(2n+1) {
+      clear: left;
+    }
   }
 }
   .menu-child {
@@ -1331,7 +1332,8 @@ legend {
         transition: color .25s;
         color: $accent-color;
         display: block;
-        font-size: 1.25em;
+        font-size: 1.1em;
+        margin-top: .25em;
       }
 
 // Food item
@@ -2134,6 +2136,17 @@ body{
       }
     }
   }
+
+  .menu-children {
+    &>li {
+      &:nth-of-type(2n+1) {
+        clear: none;
+      }
+      &:nth-of-type(4n+1) {
+        clear: left;
+      }
+    }
+  }
   .menu-child {
     width: 25%;
   }
@@ -2198,6 +2211,16 @@ body{
       margin-left: 150px;
     }
 
+  .menu-children {
+    &>li {
+      &:nth-of-type(4n+1) {
+        clear: none;
+      }
+      &:nth-of-type(5n+1) {
+        clear: left;
+      }
+    }
+  }
   .menu-child {
     width: 20%;
   }
@@ -2263,6 +2286,17 @@ body{
   .footer__subscribe {
     margin: 0 auto;
     width: 75%;
+  }
+
+  .menu-children {
+    &>li {
+      &:nth-of-type(5n+1) {
+        clear: none;
+      }
+      &:nth-of-type(6n+1) {
+        clear: left;
+      }
+    }
   }
   .menu-child {
     width: 16.6666667%;
