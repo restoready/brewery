@@ -24,7 +24,9 @@
       <div class="header__logo {% if current_paths contains localized_root_path %}header__logo--home{% endif %}">
         {% if restaurant.logo? %}
           <div class="logo">
-            {{ restaurant.logo_url | image_tag:'class:logo__image' }}
+            <a class="logo__link" href="{{ localized_root_path }}">
+              {{ restaurant.logo_url | image_tag:'class:logo__image' }}
+            </a>
           </div>
         {% endif %}
       </div>
