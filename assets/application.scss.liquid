@@ -594,7 +594,28 @@ body {
 .clearer {
   clear: both;
 }
-
+.header__logo {
+  display: block;
+  position: relative;
+  padding: .5em 0;
+  height: 50px;
+  text-align: center;
+  margin-bottom: 3em;
+}
+.header__logo--home {
+  margin-bottom: 0;
+}
+.logo {
+  position: relative;
+  z-index: 4;
+  background-color: $body-background;
+  display: inline-block;
+  width: 125px;
+  text-align: center;
+}
+.logo__image {
+  width: 100px;
+}
 .nav-button {
   position: fixed;
   bottom: 0;
@@ -875,23 +896,6 @@ legend {
 // Home page
 .home-header {
   text-align: center;
-}
-.home-header__title {
-  display: block;
-  position: relative;
-  padding: .5em 0;
-  height: 50px;
-}
-.logo {
-  position: relative;
-  z-index: 4;
-  background-color: $body-background;
-  display: inline-block;
-  width: 125px;
-  text-align: center;
-}
-.logo__image {
-  width: 100px;
 }
 .image-overlay {
   position: relative;
@@ -1963,7 +1967,7 @@ body{
   .button {
     padding: .225em 2em;
   }
-  .home-header__title {
+  .header__logo {
     height: 50px;
   }
 
@@ -2297,11 +2301,7 @@ body{
   .page {
     height: 100%;
   }
-  .nav-button {
-    top: .5em;
-  }
-  // home
-  .home-header__title {
+  .header__logo {
     height: 7%;
   }
   .logo {
@@ -2310,6 +2310,10 @@ body{
   .logo__image {
     width: 175px;
   }
+  .nav-button {
+    top: .5em;
+  }
+  // home
   .image-header--top-left,
   .image-header--top-right,
   .image-header--middle-left,
