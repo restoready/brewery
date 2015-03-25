@@ -1975,7 +1975,7 @@ body{
   }
 
   .nav-button {
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     top: 0;
     right: 0;
@@ -1983,7 +1983,8 @@ body{
     left: auto;
     width: 100px;
     z-index: 7;
-    background-color: transparent;
+    padding: .5em;
+    background-color: white;
     {% if theme_settings.nav-background-image %}
       background-image: none;
     {% endif %}
@@ -1997,8 +1998,7 @@ body{
     }
     .nav-button__hamburger {
       display: inline-block;
-      vertical-align: middle;
-      margin-top: .25em;
+      vertical-align: bottom;
       div {
         width: 20px;
         height: 4px;
@@ -2010,12 +2010,13 @@ body{
     }
     p {
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: bottom;
       font-size: 1em;
       color: $accent-color;
       position: relative;
       width: auto;
       text-align: left;
+      margin-bottom: 0;
       &:hover {
         color: scale-color($accent-color, $lightness: +25%);
       }
@@ -2025,7 +2026,7 @@ body{
     width: 0;
     z-index: 8;
     height: 0;
-    position: absolute;
+    position: fixed;
     top: 2.4em;
     right: 1em;
     border-style: solid;
@@ -2033,7 +2034,7 @@ body{
     border-color: transparent transparent $accent-color transparent;
   }
   .main-nav__items {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     top: 3.4em;
     right: .5em;
@@ -2176,8 +2177,12 @@ body{
   }
 
   .nav-button {
+    width: 110px;
     .nav-button__hamburger {
-      margin-top: 0;
+      vertical-align: middle;
+    }
+    p {
+      vertical-align: middle;
     }
   }
   // home
@@ -2346,9 +2351,7 @@ body{
   .logo__image {
     width: 175px;
   }
-  .nav-button {
-    top: .5em;
-  }
+
   // home
   .image-header--top-left,
   .image-header--top-right,
