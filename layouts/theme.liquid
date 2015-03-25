@@ -58,6 +58,15 @@
         FastClick.attach(document.body);
         $('.venobox').venobox();
 
+        $(document).click(function(event) {
+          if(!$(event.target).closest('.nav-button, .main-nav__triangle, .main-nav__items').length) {
+            if($('.main-nav__items').is(":visible")) {
+              $('.main-nav__triangle').hide();
+              $('.main-nav__items').hide();
+            }
+          }
+        });
+
         $('.image-overlay').click( function(){
           $('.active').removeClass('active');
           $(this).addClass('active');
