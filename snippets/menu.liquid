@@ -37,6 +37,7 @@
       {% endfor %}
     </ul>
   {% endif %}
+  <div class="clearer"></div>
   {% if menu.children? %}
     {% for child in menu.children %}
       {% include 'menu' with menu:child %}
